@@ -14,4 +14,8 @@ public class ProductType {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_type_generator")
     private Long id;
     private String name;  // Electronic , Book, Clothing
+
+    public ProductType(String name){
+        this.name = name;
+    }
 }

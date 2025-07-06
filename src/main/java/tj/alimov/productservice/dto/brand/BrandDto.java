@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class BrandCreationResponse {
+public class BrandDto {
     private String name;
     private String description;
     private String imgUrl;
