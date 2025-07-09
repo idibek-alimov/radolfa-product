@@ -34,9 +34,12 @@ public class BrandService {
         brand.setImgUrl(url);
         return BrandMapper.toBrandDto(brand);
     }
-    public BrandDto getBrand(Long id){
+    public BrandDto getBrandDto(Long id){
         Brand brand = brandRepository.findById(id).orElseThrow(() -> new BrandDoesNotExistException("Brand does not exist exception"));
         return BrandMapper.toBrandDto(brand);
+    }
+    public Brand getBrand(Long id){
+        return brandRepository.findById(id).orElseThrow(() -> new BrandDoesNotExistException("Brand does not exist exception"));
     }
     public List<BrandDto> getBrands(){
         List<Brand> brands = brandRepository.findAll();
