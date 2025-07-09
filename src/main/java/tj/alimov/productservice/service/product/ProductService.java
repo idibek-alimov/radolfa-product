@@ -24,7 +24,7 @@ public class ProductService {
     @Transactional
     public void createProduct(ProductRequest request, String token){
 
-        validateUser(id);
+//        validateUser(id);
 
 
     }
@@ -38,7 +38,7 @@ public class ProductService {
         if(!userServiceClient.existsUserById(id)){
             throw new UserNotFoundException("User with given id was not found");
         }
-        if()
+//        if()
     }
     private void validateUser(Long id){
         if(!userServiceClient.existsUserById(id)){
