@@ -30,15 +30,15 @@ public class ProductTypeService {
         return new ProductTypeDto(productType.getName());
     }
 
-    public ProductTypeDto getProductType(Long id){
-        ProductType productType = productTypeRepository.findById(id).orElseThrow(() -> new ProductTypeNotFoundException("Product with given id was not found"));
-
+    public ProductTypeDto getProductTypeDto(Long id){
+        ProductType productType = getProductType(id);
         return new ProductTypeDto(productType.getName());
     }
-
-
-//    public List<ProductTypeDto> getProductTypes(Pageable pageable){
-//        PageRequest
-//    }
+    public ProductType getProductType(Long id){
+        return productTypeRepository.findById(id).orElseThrow(() -> new ProductTypeNotFoundException("Product with given id was not found"));
+    }
+    public boolean existsById(Long id){
+        return productTypeRepository.existsById(id);
+    }
 
 }
