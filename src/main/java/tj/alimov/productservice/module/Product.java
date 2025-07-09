@@ -1,7 +1,10 @@
 package tj.alimov.productservice.module;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -11,6 +14,9 @@ import java.util.List;
         name = "product_generator",
         sequenceName = "seq_product_generator"
 )
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_generator")

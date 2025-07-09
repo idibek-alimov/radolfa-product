@@ -37,7 +37,9 @@ public class CategoryService {
         System.out.println("Category size = " + list.size());
         return CategoryMapper.toCategoryDtoList(list);
     }
-
+    public boolean existById(Long id){
+        return categoryRepository.existsById(id);
+    }
     private Category validateAndGetParentCategory(Long id){
         if(id != null){
             return categoryRepository.findById(id).orElseThrow(() -> new CategoryDoesNotExistException("Category with given id does not exist"));

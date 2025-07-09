@@ -1,7 +1,10 @@
 package tj.alimov.productservice.module;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -9,6 +12,9 @@ import lombok.Data;
         name = "product_attribute_template_generator",
         sequenceName = "seq_product_attribute_template_generator"
 )
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductAttributeTemplate {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_attribute_template_generator")

@@ -42,6 +42,9 @@ public class BrandService {
         List<Brand> brands = brandRepository.findAll();
         return BrandMapper.toBrandDtoList(brands);
     }
+    public boolean existById(Long id){
+        return brandRepository.existsById(id);
+    }
     private Brand validateAndGetParentBrand(Long id){
         if(id != null){
             return brandRepository.findById(id).orElseThrow(() -> new BrandDoesNotExistException("Brand with given id does not exist"));
