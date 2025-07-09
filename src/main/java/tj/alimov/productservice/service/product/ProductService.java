@@ -4,8 +4,10 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tj.alimov.productservice.dto.product.request.ProductRequest;
+import tj.alimov.productservice.exception.brand.BrandDoesNotExistException;
 import tj.alimov.productservice.exception.user.UserNotFoundException;
 import tj.alimov.productservice.feign.UserServiceClient;
+import tj.alimov.productservice.module.Brand;
 import tj.alimov.productservice.module.Category;
 import tj.alimov.productservice.module.Product;
 import tj.alimov.productservice.repository.product.ProductRepository;
@@ -23,8 +25,9 @@ public class ProductService {
     private final JwtService jwtService;
     @Transactional
     public void createProduct(ProductRequest request, String token){
-
-//        validateUser(id);
+        validateProduct(request, token);
+        Brand brand = brandService.getBrand(request.getBrandId());
+//        Category category = categoryService.getCategoryById()
 
 
     }
@@ -35,12 +38,6 @@ public class ProductService {
 
     private void validateProduct(ProductRequest request, String token){
         Long id = jwtService.extractUserId(token);
-        if(!userServiceClient.existsUserById(id)){
-            throw new UserNotFoundException("User with given id was not found");
-        }
-//        if()
-    }
-    private void validateUser(Long id){
         if(!userServiceClient.existsUserById(id)){
             throw new UserNotFoundException("User with given id was not found");
         }

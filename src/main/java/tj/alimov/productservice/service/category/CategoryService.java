@@ -28,9 +28,12 @@ public class CategoryService {
         return CategoryMapper.toCategoryDto(category);
     }
 
-    public CategoryDto getCategoryById(Long id){
-        Category category = categoryRepository.findById(id).orElseThrow(() -> new CategoryDoesNotExistException("Category with given name does not exist"));
+    public CategoryDto getCategoryDto(Long id){
+        Category category = getCategory(id);
         return CategoryMapper.toCategoryDto(category);
+    }
+    public Category getCategory(Long id){
+        return categoryRepository.findById(id).orElseThrow(() -> new CategoryDoesNotExistException("Category with given name does not exist"));
     }
     public List<CategoryDto> getAll(){
         List<Category> list = categoryRepository.findAll();
@@ -40,6 +43,7 @@ public class CategoryService {
     public boolean existById(Long id){
         return categoryRepository.existsById(id);
     }
+
     private Category validateAndGetParentCategory(Long id){
         if(id != null){
             return categoryRepository.findById(id).orElseThrow(() -> new CategoryDoesNotExistException("Category with given id does not exist"));
