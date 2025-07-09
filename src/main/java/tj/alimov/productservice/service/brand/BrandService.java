@@ -44,6 +44,7 @@ public class BrandService {
     }
     public boolean existById(Long id){
         return brandRepository.existsById(id);
+        ///
     }
     private Brand validateAndGetParentBrand(Long id){
         if(id != null){
