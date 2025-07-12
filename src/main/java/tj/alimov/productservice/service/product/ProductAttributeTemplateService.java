@@ -22,13 +22,14 @@ public class ProductAttributeTemplateService {
     private final ProductAttributeTemplateRepository productAttributeTemplateRepository;
 
     @Transactional
-    public void createTemplate(ProductAttributeTemplateRequest request){
+    public ProductAttributeTemplateDto createTemplate(ProductAttributeTemplateRequest request){
         ProductType productType = validatePATRequest(request);
         ProductAttributeTemplate template = ProductAttributeTemplateMapper.toProductAttributeTemplate(request, productType);
         productAttributeTemplateRepository.save(template);
+        return ProductAttributeTemplateMapper.toDto(template);
     }
 
-    public ProductAttributeTemplateDto getById(Long id){
+    public ProductAttributeTemplateDto getProductAttributeTemplateDto(Long id){
         ProductAttributeTemplate template = productAttributeTemplateRepository.findById(id).orElseThrow(() -> new ProductAttributeTemplateException("Product Attribute Template not found with given name"));
         return ProductAttributeTemplateMapper.toDto(template);
     }

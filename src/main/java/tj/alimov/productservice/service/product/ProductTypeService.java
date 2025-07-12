@@ -37,6 +37,8 @@ public class ProductTypeService {
     public ProductType getProductType(Long id){
         return productTypeRepository.findById(id).orElseThrow(() -> new ProductTypeNotFoundException("Product with given id was not found"));
     }
+
+
     public boolean existsById(Long id){
         return productTypeRepository.existsById(id);
     }
