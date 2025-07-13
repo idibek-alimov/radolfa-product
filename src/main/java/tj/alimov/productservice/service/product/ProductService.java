@@ -10,6 +10,7 @@ import tj.alimov.productservice.dto.product.request.ProductRequest;
 import tj.alimov.productservice.dto.product.request.ProductUpdateRequest;
 import tj.alimov.productservice.dto.product.response.ProductDto;
 import tj.alimov.productservice.exception.brand.BrandDoesNotExistException;
+import tj.alimov.productservice.exception.product.ProductIllegalAccessException;
 import tj.alimov.productservice.exception.product.ProductNotFoundException;
 import tj.alimov.productservice.exception.product.ProductUpdateException;
 import tj.alimov.productservice.exception.user.UserNotFoundException;
@@ -78,4 +79,10 @@ public class ProductService {
         return ProductMapper.toProductDtoList(products);
     }
 
+    public void validateProductOwner(Long productId, Long sellerId){
+        Product product = getProduct(productId);
+        if(product.getSellerId() != sellerId){
+            throw new ProductIllegalAccessException("Only product user can change params");
+        }
+    }
 }
