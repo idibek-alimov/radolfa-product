@@ -11,7 +11,7 @@ import tj.alimov.productservice.exception.brand.BrandExistsException;
 import tj.alimov.productservice.mapper.BrandMapper;
 import tj.alimov.productservice.module.Brand;
 import tj.alimov.productservice.repository.BrandRepository;
-import tj.alimov.productservice.service.storage.StorageService;
+import tj.alimov.productservice.storage.StorageService;
 
 import java.util.List;
 

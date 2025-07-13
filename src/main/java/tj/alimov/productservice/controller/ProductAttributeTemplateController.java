@@ -28,10 +28,9 @@ public class ProductAttributeTemplateController {
         return ResponseEntity.ok(templateDto);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/product-type/{id}")
     public ResponseEntity<List<ProductAttributeTemplateDto>> getByProductType(@PathVariable("id") Long id){
         List<ProductAttributeTemplateDto> templates = productAttributeTemplateService.getByProductType(id);
         return ResponseEntity.ok(templates);
     }
-
 }
