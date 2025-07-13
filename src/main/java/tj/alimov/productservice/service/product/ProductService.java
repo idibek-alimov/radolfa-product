@@ -36,8 +36,8 @@ public class ProductService {
     private final ProductTypeService productTypeService;
     private final JwtService jwtService;
     @Transactional
-    public void createProduct(ProductRequest request, String token){
-        Long sellerId = validateUserAndGetId(token);
+    public void createProduct(ProductRequest request, Long sellerId){
+        validateUser(sellerId);
         Brand brand = brandService.getBrand(request.getBrandId());
         Category category = categoryService.getCategory(request.getCategoryId());
         ProductType productType = productTypeService.getProductType(request.getProductTypeId());
@@ -53,8 +53,8 @@ public class ProductService {
     public Product getProduct(Long id){
         return productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with given id not found"));
     }
-    public void updateProduct(ProductUpdateRequest request, String token){
-        Long sellerId = validateUserAndGetId(token);
+    public void updateProduct(ProductUpdateRequest request, Long sellerId){
+        validateUser(sellerId);
         Product product = getProduct(request.getId());
         if(sellerId != product.getSellerId()){
             throw new ProductUpdateException("Product does not belong to you. Only seller can update the products");
@@ -76,11 +76,9 @@ public class ProductService {
         return ProductMapper.toProductDtoList(products);
     }
 
-    private Long validateUserAndGetId(String token){
-        Long id = jwtService.extractUserId(token);
+    private void validateUser(Long id){
         if(!userServiceClient.existsUserById(id)){
             throw new UserNotFoundException("User with given id was not found");
         }
-        return id;
     }
 }

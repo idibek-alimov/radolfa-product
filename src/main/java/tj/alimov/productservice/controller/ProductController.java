@@ -28,8 +28,8 @@ public class ProductController {
 
     @PostMapping("")
     public ResponseEntity<Void> createProduct(HttpServletRequest servletRequest, @RequestBody ProductRequest request){
-        String token = retrieveToken(servletRequest);
-        productService.createProduct(request, token);
+        Long id = service.getUserId(servletRequest);
+        productService.createProduct(request, id);
         return ResponseEntity.noContent().build();
     }
     @GetMapping("/{id}")
@@ -46,17 +46,9 @@ public class ProductController {
 
     @PutMapping("")
     public ResponseEntity<Void> updateProduct(HttpServletRequest servletRequest, @RequestBody ProductUpdateRequest request){
-        String token = retrieveToken(servletRequest);
-        productService.updateProduct(request, token);
+        Long id = service.getUserId(servletRequest);
+        productService.updateProduct(request, id);
         return ResponseEntity.ok().build();
     }
 
-    private String retrieveToken(HttpServletRequest request){
-        String header = request.getHeader("Authentication");
-        if(header == null || !header.startsWith("Bearer")){
-            throw new TokenNotProvidedException("Token is not provided");
-        }
-        String token = header.substring("Bearer ".length());
-        return token;
-    }
 }
