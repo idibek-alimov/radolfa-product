@@ -18,6 +18,7 @@ import tj.alimov.productservice.repository.product.ProductTypeRepository;
 public class ProductTypeService {
     private final ProductTypeRepository productTypeRepository;
 
+
     @Transactional
     public ProductTypeDto createProductType(ProductTypeRequest request){
         if(productTypeRepository.existsByName(request.getName())){
