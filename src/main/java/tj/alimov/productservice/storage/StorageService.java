@@ -1,4 +1,4 @@
-package tj.alimov.productservice.service.storage;
+package tj.alimov.productservice.storage;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
