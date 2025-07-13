@@ -10,9 +10,9 @@ import tj.alimov.productservice.repository.product.ProductAttributeValueReposito
 @RequiredArgsConstructor
 public class ProductAttributeValueService {
     private final ProductAttributeValueRepository repository;
-
+    private final ProductService productService;
     @Transactional
-    public void create(ProductAttributeValueRequest request){
+    public void create(ProductAttributeValueRequest request, Long id){
 
     }
 }

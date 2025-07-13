@@ -1,11 +1,9 @@
-package tj.alimov.productservice.mapper;
+package tj.alimov.productservice.mapper.product;
 
 import org.springframework.data.domain.Page;
 import tj.alimov.productservice.dto.product.request.ProductTypeRequest;
 import tj.alimov.productservice.dto.product.response.ProductTypeDto;
 import tj.alimov.productservice.module.ProductType;
-
-import java.util.List;
 
 public class ProductTypeMapper {
 

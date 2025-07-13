@@ -7,7 +7,7 @@ import tj.alimov.productservice.dto.product.response.ProductAttributeTemplateDto
 import tj.alimov.productservice.dto.product.request.ProductAttributeTemplateRequest;
 import tj.alimov.productservice.exception.product.ProductAttributeTemplateException;
 import tj.alimov.productservice.exception.product.ProductTypeNotFoundException;
-import tj.alimov.productservice.mapper.ProductAttributeTemplateMapper;
+import tj.alimov.productservice.mapper.product.ProductAttributeTemplateMapper;
 import tj.alimov.productservice.module.ProductAttributeTemplate;
 import tj.alimov.productservice.module.ProductType;
 import tj.alimov.productservice.repository.product.ProductAttributeTemplateRepository;

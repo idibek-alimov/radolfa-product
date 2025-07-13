@@ -1,4 +1,4 @@
-package tj.alimov.productservice.mapper;
+package tj.alimov.productservice.mapper.product;
 
 
 import org.springframework.data.domain.Page;
@@ -8,11 +8,6 @@ import tj.alimov.productservice.module.Brand;
 import tj.alimov.productservice.module.Category;
 import tj.alimov.productservice.module.Product;
 import tj.alimov.productservice.module.ProductType;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class ProductMapper {
     public static Product toProduct(ProductRequest request, Long sellerId, ProductType productType, Category category, Brand brand){

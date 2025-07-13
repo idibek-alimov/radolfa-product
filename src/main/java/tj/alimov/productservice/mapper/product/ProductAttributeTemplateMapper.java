@@ -1,4 +1,4 @@
-package tj.alimov.productservice.mapper;
+package tj.alimov.productservice.mapper.product;
 
 import tj.alimov.productservice.dto.product.response.ProductAttributeTemplateDto;
 import tj.alimov.productservice.dto.product.request.ProductAttributeTemplateRequest;

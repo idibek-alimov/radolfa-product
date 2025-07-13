@@ -9,11 +9,9 @@ import tj.alimov.productservice.dto.product.request.ProductTypeRequest;
 import tj.alimov.productservice.dto.product.response.ProductTypeDto;
 import tj.alimov.productservice.exception.product.ProductTypeExistsException;
 import tj.alimov.productservice.exception.product.ProductTypeNotFoundException;
-import tj.alimov.productservice.mapper.ProductTypeMapper;
+import tj.alimov.productservice.mapper.product.ProductTypeMapper;
 import tj.alimov.productservice.module.ProductType;
 import tj.alimov.productservice.repository.product.ProductTypeRepository;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
