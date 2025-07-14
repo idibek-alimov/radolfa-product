@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0" version="28.0.4">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2780" dy="2243" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
+    <mxGraphModel dx="2640" dy="2151" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -694,7 +694,7 @@
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="gZJ0O_LYEhmI8VsO0Ixa-7">
           <mxGeometry y="80" width="490" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-10" value="&lt;div&gt;+ createCategory(request:CategoryRequest):ResponseEntity&amp;lt;CategoryDto&amp;gt;&amp;nbsp; Post(&quot;&quot;)&lt;/div&gt;&lt;div&gt;+ getCategory(identifier: Long):ResponseEntity&amp;lt;CategoryDto&amp;gt;&amp;nbsp; get(&quot;/{id}&quot;)&lt;/div&gt;&lt;div&gt;+ updateCategory(request: category&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="gZJ0O_LYEhmI8VsO0Ixa-7">
+        <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-10" value="&lt;div&gt;+ createCategory(request:CategoryRequest):ResponseEntity&amp;lt;CategoryDto&amp;gt;&amp;nbsp; Post(&quot;&quot;)&lt;/div&gt;&lt;div&gt;+ getCategory(identifier: Long):ResponseEntity&amp;lt;CategoryDto&amp;gt;&amp;nbsp; get(&quot;/{id}&quot;)&lt;/div&gt;&lt;div&gt;+ updateCategory(request: CategoryUpdateDto)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="gZJ0O_LYEhmI8VsO0Ixa-7">
           <mxGeometry y="88" width="490" height="132" as="geometry" />
         </mxCell>
       </root>
