@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0" version="28.0.6">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4417" dy="2102" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
+    <mxGraphModel dx="4866" dy="2378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -1056,7 +1056,7 @@
           <mxGeometry x="-3090" y="230" width="3470" height="3430" as="geometry" />
         </mxCell>
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-18" value="&lt;div&gt;BrandContoller&lt;/div&gt;&lt;div&gt;(&quot;/brand&quot;)&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-2" vertex="1">
-          <mxGeometry x="50" y="340" width="560" height="240" as="geometry" />
+          <mxGeometry x="50" y="330" width="560" height="240" as="geometry" />
         </mxCell>
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-19" value="- brandService: BrandService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-18" vertex="1">
           <mxGeometry y="40" width="560" height="40" as="geometry" />
@@ -1080,7 +1080,7 @@
           <mxGeometry y="210" width="560" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-37" value="&lt;div&gt;ProductTypeContoller&lt;/div&gt;&lt;div&gt;(&quot;/product-type&quot;)&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-2" vertex="1">
-          <mxGeometry x="50" y="610" width="630" height="248" as="geometry" />
+          <mxGeometry x="50" y="590" width="630" height="248" as="geometry" />
         </mxCell>
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-38" value="- productTypeService: ProductTypeService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-37" vertex="1">
           <mxGeometry y="40" width="630" height="40" as="geometry" />
@@ -1104,7 +1104,7 @@
           <mxGeometry y="216" width="630" height="32" as="geometry" />
         </mxCell>
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-56" value="&lt;div&gt;ProductAttributeTemplateContoller&lt;/div&gt;&lt;div&gt;(&quot;/product-attribute-teamplate&quot;)&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-2" vertex="1">
-          <mxGeometry x="50" y="925" width="810" height="280" as="geometry" />
+          <mxGeometry x="50" y="905" width="810" height="280" as="geometry" />
         </mxCell>
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-57" value="- productAttributeTemplateService: ProductAttribuetTemplateService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-56" vertex="1">
           <mxGeometry y="40" width="810" height="40" as="geometry" />
@@ -1131,7 +1131,7 @@
           <mxGeometry y="248" width="810" height="32" as="geometry" />
         </mxCell>
         <mxCell id="IbpW0PY4FkwVSWiJNxcG-0" value="&lt;div&gt;ProductAttributeValueContoller&lt;/div&gt;&lt;div&gt;(&quot;/product-attribute-value&quot;)&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-2" vertex="1">
-          <mxGeometry x="60" y="1340" width="740" height="248" as="geometry" />
+          <mxGeometry x="60" y="1310" width="740" height="248" as="geometry" />
         </mxCell>
         <mxCell id="IbpW0PY4FkwVSWiJNxcG-1" value="- productAttributeValueTemplateService: ProductAttribuetValueService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="IbpW0PY4FkwVSWiJNxcG-0" vertex="1">
           <mxGeometry y="40" width="740" height="40" as="geometry" />
@@ -1295,7 +1295,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-49" value="&lt;div&gt;CategoryContoller&lt;/div&gt;&lt;div&gt;(&quot;/category&quot;)&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-2" vertex="1">
-          <mxGeometry x="50" y="50" width="560" height="272" as="geometry" />
+          <mxGeometry x="60" y="38" width="560" height="272" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-50" value="- categoryService: CategoryService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-49" vertex="1">
           <mxGeometry y="40" width="560" height="40" as="geometry" />
@@ -1670,25 +1670,25 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-221" value="&lt;div&gt;ProductVariantService&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="gZJ0O_LYEhmI8VsO0Ixa-2" vertex="1">
-          <mxGeometry x="1070" y="2900" width="740" height="216" as="geometry" />
+          <mxGeometry x="1070" y="2900" width="740" height="206" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-222" value="- productVariantRepository: ProductVariantRepository" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-221" vertex="1">
-          <mxGeometry y="40" width="740" height="40" as="geometry" />
+          <mxGeometry y="40" width="740" height="30" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-223" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="bxKsnXrEz_HqHzvOmH3F-221" vertex="1">
-          <mxGeometry y="80" width="740" height="8" as="geometry" />
+          <mxGeometry y="70" width="740" height="8" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-224" value="&lt;div&gt;+ createProductVariant(request:ProductVariantCreationRequest):ProductVariantDto&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-221" vertex="1">
-          <mxGeometry y="88" width="740" height="32" as="geometry" />
+          <mxGeometry y="78" width="740" height="32" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-225" value="&lt;div&gt;+ getProductVariant(slug: String):ProductVariantDto&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-221" vertex="1">
-          <mxGeometry y="120" width="740" height="32" as="geometry" />
+          <mxGeometry y="110" width="740" height="32" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-226" value="&lt;div&gt;+ updateProductVariant(request: ProductVariantUpdateDto):ProductVariantDto&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-221" vertex="1">
-          <mxGeometry y="152" width="740" height="32" as="geometry" />
+          <mxGeometry y="142" width="740" height="32" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-227" value="&lt;div&gt;+ deleteProductVariant(slug: String):&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-221" vertex="1">
-          <mxGeometry y="184" width="740" height="32" as="geometry" />
+          <mxGeometry y="174" width="740" height="32" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-228" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.004;entryY=0.101;entryDx=0;entryDy=0;entryPerimeter=0;" parent="gZJ0O_LYEhmI8VsO0Ixa-2" source="bxKsnXrEz_HqHzvOmH3F-23" target="bxKsnXrEz_HqHzvOmH3F-221" edge="1">
           <mxGeometry relative="1" as="geometry" />
