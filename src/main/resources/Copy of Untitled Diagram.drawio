@@ -1008,7 +1008,7 @@
         <mxCell id="4Wm0VVx5wLLQRQfYY77--40" value="&lt;div&gt;- price: BigDecimal&lt;/div&gt;&lt;div&gt;- discount: BigDecimal&lt;/div&gt;&lt;div&gt;- productSlug: String&lt;/div&gt;&lt;div&gt;- colorSlug: String&lt;/div&gt;&lt;div&gt;- sizeSlugs[]: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--39" vertex="1">
           <mxGeometry y="26" width="230" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="4Wm0VVx5wLLQRQfYY77--41" value="ProductVariantListDto" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--38" vertex="1">
+        <mxCell id="4Wm0VVx5wLLQRQfYY77--41" value="ProductArticleListDto" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--38" vertex="1">
           <mxGeometry x="10" y="168" width="210" height="180" as="geometry">
             <mxRectangle x="50" y="140" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -1016,7 +1016,7 @@
         <mxCell id="4Wm0VVx5wLLQRQfYY77--42" value="&lt;div&gt;- slug: String&lt;/div&gt;&lt;div&gt;- productBaseIdentifier: BigInteger&lt;/div&gt;&lt;div&gt;- currentPrice: String&lt;/div&gt;&lt;div&gt;- discountPercentage: BigDecimal&lt;/div&gt;&lt;div&gt;- discountPrice: BigDecimal&lt;/div&gt;&lt;div&gt;- name: String&lt;/div&gt;&lt;div&gt;- images: []String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--41" vertex="1">
           <mxGeometry y="26" width="210" height="154" as="geometry" />
         </mxCell>
-        <mxCell id="4Wm0VVx5wLLQRQfYY77--43" value="ProductVariantUpdateRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--38" vertex="1">
+        <mxCell id="4Wm0VVx5wLLQRQfYY77--43" value="ProductArticleUpdateRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--38" vertex="1">
           <mxGeometry x="260" y="38" width="230" height="130" as="geometry">
             <mxRectangle x="50" y="140" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -1024,7 +1024,7 @@
         <mxCell id="4Wm0VVx5wLLQRQfYY77--44" value="&lt;div&gt;- slug: String&lt;/div&gt;&lt;div&gt;- price: BigDecimal&lt;/div&gt;&lt;div&gt;- discount: BigDecimal&lt;/div&gt;&lt;div&gt;- productSlug: String&lt;/div&gt;&lt;div&gt;- colorSlug: String&lt;/div&gt;&lt;div&gt;- sizeSlugs[]: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--43" vertex="1">
           <mxGeometry y="26" width="230" height="104" as="geometry" />
         </mxCell>
-        <mxCell id="bxKsnXrEz_HqHzvOmH3F-16" value="ProductVariantListDto" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--38" vertex="1">
+        <mxCell id="bxKsnXrEz_HqHzvOmH3F-16" value="ProductArticleListDto" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--38" vertex="1">
           <mxGeometry x="260" y="190" width="360" height="140" as="geometry">
             <mxRectangle x="50" y="140" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
