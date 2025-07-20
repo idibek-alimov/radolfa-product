@@ -1,7 +1,9 @@
 package tj.alimov.productservice.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
@@ -14,30 +16,17 @@ import tj.alimov.productservice.service.JwtService;
 import tj.alimov.productservice.service.product.ProductService;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 @RequiredArgsConstructor
+@Slf4j
 public class ProductController {
     private final JwtService service;
     private final ProductService productService;
 
-//    @PostMapping("/token")
-//    public ResponseEntity<Void> manageToken(@RequestBody String token){
-//        System.out.println(token);
-//        Claims claims = service.extractClaims(token);
-//        System.out.println(claims.get("roles"));
-//        return ResponseEntity.ok().build();
-//    }
-//
-//    @GetMapping("/admin")
-//    public ResponseEntity<String> hasPermission(){
-//        System.out.println("User has role admin");
-//        return ResponseEntity.ok("Hello");
-//    }
-
     @PostMapping("")
     public ResponseEntity<Void> createProduct(HttpServletRequest servletRequest, @RequestBody ProductRequest request){
-        String token = retrieveToken(servletRequest);
-        productService.createProduct(request, token);
+        Long id = service.getUserId(servletRequest);
+        productService.createProduct(request, id);
         return ResponseEntity.noContent().build();
     }
     @GetMapping("/{id}")
@@ -46,24 +35,17 @@ public class ProductController {
         return ResponseEntity.ok(productDto);
     }
     @GetMapping("/all/{page}/{size}")
-    public ResponseEntity<Page<ProductDto>> getProducts(@PathVariable("page") Integer page, @PathVariable Integer size){
+    public ResponseEntity<Page<ProductDto>> getProducts(@PathVariable("page") @Min(0) int page, @PathVariable("size") @Min(1) int size){
+        log.info("Page request of - page={}, size={}", page, size);
         Page<ProductDto> productDtos = productService.getProducts(PageRequest.of(page, size));
         return ResponseEntity.ok(productDtos);
     }
 
     @PutMapping("")
     public ResponseEntity<Void> updateProduct(HttpServletRequest servletRequest, @RequestBody ProductUpdateRequest request){
-        String token = retrieveToken(servletRequest);
-        productService.updateProduct(request, token);
+        Long id = service.getUserId(servletRequest);
+        productService.updateProduct(request, id);
         return ResponseEntity.ok().build();
     }
 
-    private String retrieveToken(HttpServletRequest request){
-        String header = request.getHeader("Authentication");
-        if(header == null || !header.startsWith("Bearer")){
-            throw new TokenNotProvidedException("Token is not provided");
-        }
-        String token = header.substring("Bearer ".length());
-        return token;
-    }
 }
