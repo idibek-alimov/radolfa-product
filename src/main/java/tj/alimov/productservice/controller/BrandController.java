@@ -10,7 +10,7 @@ import tj.alimov.productservice.service.brand.BrandService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/brand")
+@RequestMapping("/brands")
 @RequiredArgsConstructor
 public class BrandController {
     private final BrandService brandService;

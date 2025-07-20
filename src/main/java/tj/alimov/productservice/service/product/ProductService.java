@@ -21,19 +21,21 @@ import tj.alimov.productservice.repository.product.ProductRepository;
 import tj.alimov.productservice.service.JwtService;
 import tj.alimov.productservice.service.brand.BrandService;
 import tj.alimov.productservice.service.category.CategoryService;
+import tj.alimov.productservice.service.user.UserService;
 
 @Service
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
-    private final UserServiceClient userServiceClient;
+//    private final UserServiceClient userServiceClient;
+    private final UserService userService;
     private final CategoryService categoryService;
     private final BrandService brandService;
     private final ProductTypeService productTypeService;
     private final JwtService jwtService;
     @Transactional
-    public void createProduct(ProductRequest request, String token){
-        Long sellerId = validateUserAndGetId(token);
+    public void createProduct(ProductRequest request, Long sellerId){
+        userService.validateUser(sellerId);
         Brand brand = brandService.getBrand(request.getBrandId());
 //        Category category = categoryService.getCategory(request.getCategoryId());
         ProductType productType = productTypeService.getProductType(request.getProductTypeId());
@@ -49,8 +51,8 @@ public class ProductService {
     public Product getProduct(Long id){
         return productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with given id not found"));
     }
-    public void updateProduct(ProductUpdateRequest request, String token){
-        Long sellerId = validateUserAndGetId(token);
+    public void updateProduct(ProductUpdateRequest request, Long sellerId){
+        userService.validateUser(sellerId);
         Product product = getProduct(request.getId());
         if(sellerId != product.getSellerId()){
             throw new ProductUpdateException("Product does not belong to you. Only seller can update the products");
@@ -72,11 +74,4 @@ public class ProductService {
         return ProductMapper.toProductDtoList(products);
     }
 
-    private Long validateUserAndGetId(String token){
-        Long id = jwtService.extractUserId(token);
-        if(!userServiceClient.existsUserById(id)){
-            throw new UserNotFoundException("User with given id was not found");
-        }
-        return id;
-    }
 }
