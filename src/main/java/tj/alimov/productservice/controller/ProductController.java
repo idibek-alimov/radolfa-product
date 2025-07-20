@@ -1,20 +1,17 @@
 package tj.alimov.productservice.controller;
 
-import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tj.alimov.productservice.dto.product.request.ProductRequest;
 import tj.alimov.productservice.dto.product.request.ProductUpdateRequest;
 import tj.alimov.productservice.dto.product.response.ProductDto;
 import tj.alimov.productservice.exception.user.TokenNotProvidedException;
-import tj.alimov.productservice.module.ProductType;
 import tj.alimov.productservice.service.JwtService;
 import tj.alimov.productservice.service.product.ProductService;
 

@@ -29,6 +29,7 @@ public class SecurityConfig {
                         .requestMatchers("/v3/api-docs/**").permitAll()
                         .requestMatchers("/**").permitAll()
                         // Category
+                        .requestMatchers("/**").permitAll()
                         .requestMatchers("/api/category/public/**", "/api/category/public").permitAll()
 
                         .anyRequest().authenticated())

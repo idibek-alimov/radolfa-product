@@ -1,4 +1,4 @@
-package tj.alimov.productservice.module;
+package tj.alimov.productservice.model.category;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
+@Table(indexes = {@Index(name = "idx_category_slug", columnList = "slug")})
 @Data
 @SequenceGenerator(
         name = "category_generator",
@@ -27,6 +28,7 @@ public class Category {
     @ManyToOne(fetch = FetchType.LAZY)
     private Category parentCategory;
 
+
     @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.ALL)
-    private List<Category> children;
+    private List<Category> childCategories;
 }
