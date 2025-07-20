@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tj.alimov.productservice.model.brand.Brand;
 import tj.alimov.productservice.model.category.Category;
 
 import java.util.List;

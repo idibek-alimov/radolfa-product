@@ -9,7 +9,7 @@ import tj.alimov.productservice.dto.brand.BrandImgUpdateRequest;
 import tj.alimov.productservice.exception.brand.BrandDoesNotExistException;
 import tj.alimov.productservice.exception.brand.BrandExistsException;
 import tj.alimov.productservice.mapper.BrandMapper;
-import tj.alimov.productservice.model.Brand;
+import tj.alimov.productservice.model.brand.Brand;
 import tj.alimov.productservice.repository.BrandRepository;
 import tj.alimov.productservice.storage.StorageService;
 
