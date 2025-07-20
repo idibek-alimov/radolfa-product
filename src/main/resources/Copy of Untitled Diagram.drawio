@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0" version="28.0.6">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4484" dy="2241" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
+    <mxGraphModel dx="4014" dy="1900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -1365,7 +1365,7 @@
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-54" value="&lt;div&gt;+ updateCategory(request: CategoryUpdateDto):ResponseEntity&amp;lt;CategoryDto&amp;gt; put(&quot;&quot;)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-49" vertex="1">
           <mxGeometry y="150" width="560" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="bxKsnXrEz_HqHzvOmH3F-55" value="&lt;div&gt;+ deleteCategory(slug: String):ResponseEntity&amp;lt;Void&amp;gt;&amp;nbsp; delete(&quot;/{slug}&quot;)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-49" vertex="1">
+        <mxCell id="bxKsnXrEz_HqHzvOmH3F-55" value="&lt;div&gt;+ deleteCategory(slug: String):ResponseEntity&amp;lt;Void&amp;gt;&amp;nbsp; delete(&quot;/{slug}&quot;) // Deactivated&lt;/div&gt;&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-49" vertex="1">
           <mxGeometry y="180" width="560" height="30" as="geometry" />
         </mxCell>
         <mxCell id="bxKsnXrEz_HqHzvOmH3F-56" value="&lt;div&gt;+ getAll():ResponseEntity&amp;lt;Page&amp;lt;CategoryDTO&amp;gt;&amp;gt;&amp;nbsp; get(&quot;/all&quot;)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="bxKsnXrEz_HqHzvOmH3F-49" vertex="1">
