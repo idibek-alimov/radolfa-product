@@ -2,16 +2,13 @@ package tj.alimov.productservice.service.product;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import tj.alimov.productservice.dto.product.request.ProductTypeRequest;
 import tj.alimov.productservice.dto.product.response.ProductTypeDto;
 import tj.alimov.productservice.exception.product.ProductTypeExistsException;
 import tj.alimov.productservice.exception.product.ProductTypeNotFoundException;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.model.ProductType;
 import tj.alimov.productservice.repository.product.ProductTypeRepository;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

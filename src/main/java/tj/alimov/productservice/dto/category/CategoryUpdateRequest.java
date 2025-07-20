@@ -5,7 +5,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class CategoryDto {
+public class CategoryUpdateRequest {
     private String name;
     private String slug;
+    private String parentCategorySlug;
 }

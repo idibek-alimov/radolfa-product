@@ -2,9 +2,7 @@ package tj.alimov.productservice.mapper;
 
 import tj.alimov.productservice.dto.brand.BrandDto;
 import tj.alimov.productservice.dto.brand.BrandCreationRequest;
-import tj.alimov.productservice.dto.brand.BrandDto;
-import tj.alimov.productservice.module.Brand;
-import tj.alimov.productservice.module.Brand;
+import tj.alimov.productservice.model.Brand;
 
 import java.util.List;
 import java.util.stream.Collectors;
