@@ -8,8 +8,8 @@ import tj.alimov.productservice.dto.product.request.ProductAttributeTemplateRequ
 import tj.alimov.productservice.exception.product.ProductAttributeTemplateException;
 import tj.alimov.productservice.exception.product.ProductTypeNotFoundException;
 import tj.alimov.productservice.mapper.ProductAttributeTemplateMapper;
-import tj.alimov.productservice.module.ProductAttributeTemplate;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.model.ProductAttributeTemplate;
+import tj.alimov.productservice.model.ProductType;
 import tj.alimov.productservice.repository.product.ProductAttributeTemplateRepository;
 import tj.alimov.productservice.repository.product.ProductTypeRepository;
 

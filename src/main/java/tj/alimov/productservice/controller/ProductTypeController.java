@@ -10,7 +10,7 @@ import tj.alimov.productservice.dto.product.response.ProductTypeDto;
 import tj.alimov.productservice.service.product.ProductTypeService;
 
 @RestController
-@RequestMapping("product-types/")
+@RequestMapping("/product-types")
 @RequiredArgsConstructor
 public class ProductTypeController {
     private final ProductTypeService productTypeService;

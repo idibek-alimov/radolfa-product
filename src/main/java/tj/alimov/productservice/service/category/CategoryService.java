@@ -8,7 +8,7 @@ import tj.alimov.productservice.dto.category.CategoryDto;
 import tj.alimov.productservice.exception.category.CategoryDoesNotExistException;
 import tj.alimov.productservice.exception.category.CategoryExistsException;
 import tj.alimov.productservice.mapper.CategoryMapper;
-import tj.alimov.productservice.module.Category;
+import tj.alimov.productservice.model.Category;
 import tj.alimov.productservice.repository.CategoryRepository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package tj.alimov.productservice.mapper;
 import tj.alimov.productservice.dto.category.CategoryCreationRequest;
 import tj.alimov.productservice.dto.category.CategoryDto;
-import tj.alimov.productservice.module.Category;
+import tj.alimov.productservice.model.Category;
 
 import java.util.List;
 import java.util.stream.Collectors;

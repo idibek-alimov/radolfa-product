@@ -1,4 +1,4 @@
-package tj.alimov.productservice.module;
+package tj.alimov.productservice.model;
 
 public enum AttributeDataType {
     STRING,

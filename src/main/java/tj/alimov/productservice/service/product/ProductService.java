@@ -1,6 +1,5 @@
 package tj.alimov.productservice.service.product;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -9,24 +8,19 @@ import org.springframework.stereotype.Service;
 import tj.alimov.productservice.dto.product.request.ProductRequest;
 import tj.alimov.productservice.dto.product.request.ProductUpdateRequest;
 import tj.alimov.productservice.dto.product.response.ProductDto;
-import tj.alimov.productservice.exception.brand.BrandDoesNotExistException;
 import tj.alimov.productservice.exception.product.ProductIllegalAccessException;
 import tj.alimov.productservice.exception.product.ProductNotFoundException;
 import tj.alimov.productservice.exception.product.ProductUpdateException;
-import tj.alimov.productservice.exception.user.UserNotFoundException;
-import tj.alimov.productservice.feign.UserServiceClient;
 import tj.alimov.productservice.mapper.ProductMapper;
-import tj.alimov.productservice.module.Brand;
-import tj.alimov.productservice.module.Category;
-import tj.alimov.productservice.module.Product;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.model.Brand;
+import tj.alimov.productservice.model.Category;
+import tj.alimov.productservice.model.Product;
+import tj.alimov.productservice.model.ProductType;
 import tj.alimov.productservice.repository.product.ProductRepository;
 import tj.alimov.productservice.service.JwtService;
 import tj.alimov.productservice.service.brand.BrandService;
 import tj.alimov.productservice.service.category.CategoryService;
 import tj.alimov.productservice.service.user.UserService;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

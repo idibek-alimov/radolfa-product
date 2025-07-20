@@ -2,8 +2,8 @@ package tj.alimov.productservice.mapper;
 
 import tj.alimov.productservice.dto.product.response.ProductAttributeTemplateDto;
 import tj.alimov.productservice.dto.product.request.ProductAttributeTemplateRequest;
-import tj.alimov.productservice.module.ProductAttributeTemplate;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.model.ProductAttributeTemplate;
+import tj.alimov.productservice.model.ProductType;
 
 import java.util.List;
 import java.util.stream.Collectors;
