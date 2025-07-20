@@ -1,6 +1,6 @@
 package tj.alimov.productservice.service.category;
 
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.bouncycastle.util.Arrays;
 import org.springframework.data.domain.Page;
@@ -36,6 +36,7 @@ public class CategoryService {
         }
 
         Category category = CategoryMapper.toCategory(request, parentCategory);
+        category.setSlug(generateUniqueSlug(category.getName()));
         categoryRepository.save(category);
         return CategoryMapper.toCategoryDto(category);
     }
@@ -53,6 +54,7 @@ public class CategoryService {
             parentCategory = findBySlug(request.getParentCategorySlug());
         }
         category.setName(request.getName());
+        validateNoCircularDependency(category, parentCategory);
         category.setParentCategory(parentCategory);
         categoryRepository.save(category);
 
@@ -70,12 +72,14 @@ public class CategoryService {
         return CategoryMapper.toCategoryDtoPage(page);
     }
     /** Get All child categories of given category*/
+    @Transactional(readOnly = true)
     public List<CategoryDto> getSubcategories(String slug){
         Category category = findBySlug(slug);
         List<Category> subcategories = category.getChildCategories();
         return CategoryMapper.toCategoryDtoList(subcategories);
     }
     /** Get full path(up to top ancestor) of the given category */
+    @Transactional(readOnly = true)
     public List<CategoryDto> getFullPath(String slug){
         Category category = findBySlug(slug);
         category = category.getParentCategory();
@@ -93,8 +97,29 @@ public class CategoryService {
         return categoryRepository.findBySlug(slug).orElseThrow(() -> new CategoryNotFoundException("Category with given slug not found"));
     }
 
-
     private boolean existByName(String name){
         return categoryRepository.existsByName(name);
+    }
+
+    private String generateUniqueSlug(String name){
+        String baseSlug = name.trim().toLowerCase()
+                .replaceAll("[^a-z0-9\\s-]", "")
+                .replaceAll("\\s+", "-");
+        String slug = baseSlug;
+        int suffix = 1;
+
+        while(categoryRepository.existsBySlug(slug)){
+            slug = baseSlug + "-" + (suffix++);
+        }
+        return slug;
+    }
+
+    private void validateNoCircularDependency(Category child, Category parent){
+        while(parent != null){
+            if(parent.getId() == child.getId()){
+                throw new IllegalArgumentException("Category can't be its own parent");
+            }
+            parent = parent.getParentCategory();
+        }
     }
 }
