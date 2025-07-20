@@ -4,7 +4,7 @@ package tj.alimov.productservice.mapper;
 import org.springframework.data.domain.Page;
 import tj.alimov.productservice.dto.product.request.ProductRequest;
 import tj.alimov.productservice.dto.product.response.ProductDto;
-import tj.alimov.productservice.model.Brand;
+import tj.alimov.productservice.model.brand.Brand;
 import tj.alimov.productservice.model.category.Category;
 import tj.alimov.productservice.model.Product;
 import tj.alimov.productservice.model.ProductType;
