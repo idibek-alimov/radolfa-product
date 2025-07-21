@@ -3,7 +3,6 @@ import org.springframework.data.domain.Page;
 import tj.alimov.productservice.dto.category.CategoryCreationRequest;
 import tj.alimov.productservice.dto.category.CategoryDto;
 import tj.alimov.productservice.model.category.Category;
-import tj.alimov.productservice.slug.category.CategorySlugGenerator;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +15,6 @@ public class CategoryMapper {
     public static Category toCategory(CategoryCreationRequest request, Category parentCategory){
         return Category.builder()
                 .name(request.getName())
-                .slug(CategorySlugGenerator.generateSlug(request.getName()))
                 .parentCategory(parentCategory)
                 .build();
     }

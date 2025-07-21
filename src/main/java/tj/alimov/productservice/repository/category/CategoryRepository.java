@@ -14,6 +14,10 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
             "FROM Category c WHERE c.name = :name")
     boolean existsByName(String name);
 
+    @Query(value = "SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END " +
+            "FROM Category c WHERE c.slug = :slug")
+    boolean existsBySlug(String slug);
+
 //    @Query(value = "DELETE FROM Category c WHERE c.slug = :slug")
 //    void deleteBySlug(String slug);
 }

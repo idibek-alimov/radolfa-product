@@ -33,7 +33,7 @@ public class ProductService {
     @Transactional
     public void createProduct(ProductRequest request, Long sellerId){
         userService.validateUser(sellerId);
-        Brand brand = brandService.getBrand(request.getBrandId());
+//        Brand brand = brandService.getBrand(request.getBrandId());
 //        Category category = categoryService.getCategory(request.getCategoryId());
         ProductType productType = productTypeService.getProductType(request.getProductTypeId());
 
@@ -54,12 +54,12 @@ public class ProductService {
         if(sellerId != product.getSellerId()){
             throw new ProductUpdateException("Product does not belong to you. Only seller can update the products");
         }
-        Brand brand = brandService.getBrand(request.getBrandId());
+//        Brand brand = brandService.getBrand(request.getBrandId());
 //        Category category = categoryService.getCategory(request.getCategoryId());
         ProductType productType = productTypeService.getProductType(request.getProductTypeId());
 
         product.setProductType(productType);
-        product.setBrand(brand);
+//        product.setBrand(brand);
 //        product.setCategory(category);
         product.setName(request.getName());
         product.setDescription(request.getDescription());
