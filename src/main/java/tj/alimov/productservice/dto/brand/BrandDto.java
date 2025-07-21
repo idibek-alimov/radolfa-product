@@ -2,11 +2,7 @@ package tj.alimov.productservice.dto.brand;
 
 import lombok.Builder;
 import lombok.Data;
+import tj.alimov.productservice.dto.img.ImageDto;
 
 @Data
-@Builder
-public class BrandDto {
-    private String name;
-    private String description;
-    private String imgUrl;
-}
+public record BrandDto(String name, String slug, String description, String url, ImageDto[] images){}
