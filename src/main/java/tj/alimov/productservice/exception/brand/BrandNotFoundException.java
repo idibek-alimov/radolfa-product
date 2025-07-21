@@ -1,14 +1,14 @@
 package tj.alimov.productservice.exception.brand;
 
-public class BrandDoesNotExistException extends RuntimeException{
+public class BrandNotFoundException extends RuntimeException{
     private String message;
     private Integer code;
 
-    public BrandDoesNotExistException(String message, Integer code){
+    public BrandNotFoundException(String message, Integer code){
         this.message = message;
         this.code = code;
     }
-    public BrandDoesNotExistException(String message){
+    public BrandNotFoundException(String message){
         this.message = message;
     }
 }
