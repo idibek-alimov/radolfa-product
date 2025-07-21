@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0" version="28.0.6">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4196" dy="2032" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
+    <mxGraphModel dx="4333" dy="2131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -729,7 +729,7 @@
         <mxCell id="sPSupXaPWO5JqcNPg5AE-50" value="Brand" style="swimlane;startSize=23;" parent="sPSupXaPWO5JqcNPg5AE-15" vertex="1">
           <mxGeometry x="440" y="50" width="380" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="sPSupXaPWO5JqcNPg5AE-51" value="&lt;div&gt;BrandRequest&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="sPSupXaPWO5JqcNPg5AE-50" vertex="1">
+        <mxCell id="sPSupXaPWO5JqcNPg5AE-51" value="&lt;div&gt;BrandCreationRequest&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="sPSupXaPWO5JqcNPg5AE-50" vertex="1">
           <mxGeometry x="10" y="38" width="160" height="104" as="geometry">
             <mxRectangle x="50" y="140" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -760,10 +760,10 @@
         <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-47" value="- url: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sPSupXaPWO5JqcNPg5AE-55" vertex="1">
           <mxGeometry y="104" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="sPSupXaPWO5JqcNPg5AE-58" value="-imgUrls: []String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sPSupXaPWO5JqcNPg5AE-55" vertex="1">
+        <mxCell id="sPSupXaPWO5JqcNPg5AE-58" value="-images: []ImageDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sPSupXaPWO5JqcNPg5AE-55" vertex="1">
           <mxGeometry y="130" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-22" value="&lt;div&gt;BrandRequest&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="sPSupXaPWO5JqcNPg5AE-50" vertex="1">
+        <mxCell id="gZJ0O_LYEhmI8VsO0Ixa-22" value="&lt;div&gt;BrandUpdateRequest&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="sPSupXaPWO5JqcNPg5AE-50" vertex="1">
           <mxGeometry x="200" y="38" width="160" height="130" as="geometry">
             <mxRectangle x="50" y="140" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
