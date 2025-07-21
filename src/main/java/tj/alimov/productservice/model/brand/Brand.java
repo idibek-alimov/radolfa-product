@@ -1,4 +1,4 @@
-package tj.alimov.productservice.model;
+package tj.alimov.productservice.model.brand;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,7 +21,8 @@ public class Brand {
     private Long id;
 
     private String name;
+    private String slug;
     private String description;
+    private String url;
 
-    private String imgUrl;
 }
