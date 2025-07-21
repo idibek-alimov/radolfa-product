@@ -1021,7 +1021,7 @@
         <mxCell id="4Wm0VVx5wLLQRQfYY77--4" value="- slug: String&lt;div&gt;- baseUrl: String&lt;/div&gt;&lt;div&gt;- thumbnailurl: String&lt;/div&gt;&lt;div&gt;- position: Integer&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--3" vertex="1">
           <mxGeometry y="26" width="210" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="4Wm0VVx5wLLQRQfYY77--6" value="ProductTypeUpdateRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--0" vertex="1">
+        <mxCell id="4Wm0VVx5wLLQRQfYY77--6" value="ImageUpdateRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="4Wm0VVx5wLLQRQfYY77--0" vertex="1">
           <mxGeometry x="230" y="38" width="200" height="70" as="geometry">
             <mxRectangle x="50" y="140" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
