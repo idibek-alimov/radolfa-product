@@ -76,6 +76,7 @@ public class BrandService {
             brandImages.add(brandImage);
         }
         brandImageRepository.saveAll(brandImages);
+
         return BrandMapper.toBrandDto(brand);
     }
 
