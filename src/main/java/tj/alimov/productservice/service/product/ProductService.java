@@ -10,10 +10,9 @@ import tj.alimov.productservice.dto.product.request.ProductUpdateRequest;
 import tj.alimov.productservice.dto.product.response.ProductDto;
 import tj.alimov.productservice.exception.product.ProductNotFoundException;
 import tj.alimov.productservice.exception.product.ProductUpdateException;
-import tj.alimov.productservice.mapper.ProductMapper;
-import tj.alimov.productservice.model.brand.Brand;
-import tj.alimov.productservice.model.Product;
-import tj.alimov.productservice.model.ProductType;
+import tj.alimov.productservice.mapper.product.ProductMapper;
+import tj.alimov.productservice.model.product.Product;
+import tj.alimov.productservice.model.product.ProductType;
 import tj.alimov.productservice.repository.product.ProductRepository;
 import tj.alimov.productservice.service.JwtService;
 import tj.alimov.productservice.service.brand.BrandService;
@@ -35,7 +34,7 @@ public class ProductService {
         userService.validateUser(sellerId);
 //        Brand brand = brandService.getBrand(request.getBrandId());
 //        Category category = categoryService.getCategory(request.getCategoryId());
-        ProductType productType = productTypeService.getProductType(request.getProductTypeId());
+//        ProductType productType = productTypeService.getProductType(request.getProductTypeId());
 
 //        Product product = ProductMapper.toProduct(request, sellerId, productType, category, brand);
 //        productRepository.save(product);
@@ -56,9 +55,9 @@ public class ProductService {
         }
 //        Brand brand = brandService.getBrand(request.getBrandId());
 //        Category category = categoryService.getCategory(request.getCategoryId());
-        ProductType productType = productTypeService.getProductType(request.getProductTypeId());
+//        ProductType productType = productTypeService.getProductType(request.getProductTypeId());
 
-        product.setProductType(productType);
+//        product.setProductType(productType);
 //        product.setBrand(brand);
 //        product.setCategory(category);
         product.setName(request.getName());

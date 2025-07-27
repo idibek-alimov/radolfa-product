@@ -1,21 +1,20 @@
 package tj.alimov.productservice.service.product;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
-import tj.alimov.productservice.dto.product.request.ProductTypeRequest;
-import tj.alimov.productservice.dto.product.response.ProductTypeDto;
-import tj.alimov.productservice.exception.product.ProductTypeExistsException;
-import tj.alimov.productservice.exception.product.ProductTypeNotFoundException;
+import tj.alimov.productservice.dto.productType.ProductTypeCreationRequest;
+import tj.alimov.productservice.dto.productType.ProductTypeDto;
+import tj.alimov.productservice.dto.productType.ProductTypeUpdateRequest;
+import tj.alimov.productservice.exception.productType.ProductTypeExistsException;
+import tj.alimov.productservice.exception.productType.ProductTypeNotFoundException;
 
-import tj.alimov.productservice.model.ProductType;
+import tj.alimov.productservice.model.product.ProductType;
 
-import tj.alimov.productservice.mapper.ProductTypeMapper;
-import tj.alimov.productservice.model.ProductType;
+import tj.alimov.productservice.mapper.product.ProductTypeMapper;
 
 import tj.alimov.productservice.repository.product.ProductTypeRepository;
 
@@ -24,33 +23,36 @@ import tj.alimov.productservice.repository.product.ProductTypeRepository;
 public class ProductTypeService {
     private final ProductTypeRepository productTypeRepository;
 
+    /** Get create product-type */
     @Transactional
-    public ProductTypeDto createProductType(ProductTypeRequest request){
-        if(productTypeRepository.existsByName(request.getName())){
+    public ProductTypeDto createProductType(ProductTypeCreationRequest request){
+        if(productTypeRepository.existsByName(request.name())){
             throw new ProductTypeExistsException("ProductType with current name already exits");
         }
         ProductType productType = ProductTypeMapper.toProductType(request);
         productTypeRepository.save(productType);
         return ProductTypeMapper.toDto(productType);
     }
-
-    public ProductTypeDto getProductTypeDto(Long id){
-        ProductType productType = getProductType(id);
+    /** Get product-type by slug */
+    public ProductTypeDto getProductType(String slug){
+        ProductType productType = findProductType(slug);
         return ProductTypeMapper.toDto(productType);
     }
-    public Page<ProductTypeDto> getProductTypes(Pageable pageable){
+    /** Update product-type */
+    @Transactional
+    public ProductTypeDto updateProductType(ProductTypeUpdateRequest request){
+        ProductType productType = findProductType(request.slug());
+        productType.setName(request.name());
+        productTypeRepository.save(productType);
+        return ProductTypeMapper.toDto(productType);
+    }
+    /** Get all product-types */
+    public Page<ProductTypeDto> getAll(Pageable pageable){
         Page<ProductType> page = productTypeRepository.findAll(pageable);
         return ProductTypeMapper.toDtoPage(page);
     }
-    public ProductTypeDto findByName(String name){
-        ProductType productType = productTypeRepository.findByName(name).orElseThrow(() -> new ProductTypeNotFoundException("Product type with given name not found"));
-        return ProductTypeMapper.toDto(productType);
+    /** Find product-type by slug, if not found throw error. */
+    public ProductType findProductType(String slug){
+        return productTypeRepository.findBySlug(slug).orElseThrow(() -> new ProductTypeNotFoundException("Product type with given slug not found"));
     }
-    public ProductType getProductType(Long id){
-        return productTypeRepository.findById(id).orElseThrow(() -> new ProductTypeNotFoundException("Product with given id was not found"));
-    }
-    public boolean existsById(Long id){
-        return productTypeRepository.existsById(id);
-    }
-
 }

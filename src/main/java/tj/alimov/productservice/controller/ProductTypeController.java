@@ -5,8 +5,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tj.alimov.productservice.dto.product.request.ProductTypeRequest;
-import tj.alimov.productservice.dto.product.response.ProductTypeDto;
+import tj.alimov.productservice.dto.productType.ProductTypeCreationRequest;
+import tj.alimov.productservice.dto.productType.ProductTypeDto;
 import tj.alimov.productservice.service.product.ProductTypeService;
 
 @RestController
@@ -16,25 +16,20 @@ public class ProductTypeController {
     private final ProductTypeService productTypeService;
 
     @PostMapping("")
-    public ResponseEntity<ProductTypeDto> createProductType(@RequestBody ProductTypeRequest request){
+    public ResponseEntity<ProductTypeDto> createProductType(@RequestBody ProductTypeCreationRequest request){
         ProductTypeDto dto = productTypeService.createProductType(request);
         return ResponseEntity.ok(dto);
     }
-    @GetMapping("{id}")
-    public ResponseEntity<ProductTypeDto> getProductType(@PathVariable("id") Long id){
-        ProductTypeDto dto = productTypeService.getProductTypeDto(id);
+    @GetMapping("/{slug}")
+    public ResponseEntity<ProductTypeDto> getProductType(@PathVariable("slug") String slug){
+        ProductTypeDto dto = productTypeService.getProductType(slug);
         return ResponseEntity.ok(dto);
     }
 
     @GetMapping("/all/{page}/{size}")
     public ResponseEntity<Page<ProductTypeDto>> getProductTypePage(@PathVariable("page") Integer page, @PathVariable("size") Integer size){
-        Page<ProductTypeDto> pageList = productTypeService.getProductTypes(PageRequest.of(page, size));
+        Page<ProductTypeDto> pageList = productTypeService.getAll(PageRequest.of(page, size));
         return ResponseEntity.ok(pageList);
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<ProductTypeDto> findByName(@RequestParam String name){
-        ProductTypeDto dto = productTypeService.findByName(name);
-        return ResponseEntity.ok(dto);
-    }
 }

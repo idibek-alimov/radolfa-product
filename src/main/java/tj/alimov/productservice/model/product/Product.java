@@ -1,4 +1,4 @@
-package tj.alimov.productservice.model;
+package tj.alimov.productservice.model.product;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
