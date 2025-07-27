@@ -30,6 +30,7 @@ public class ProductTypeService {
             throw new ProductTypeExistsException("ProductType with current name already exits");
         }
         ProductType productType = ProductTypeMapper.toProductType(request);
+        productType.setSlug(generateUniqueSlug(request.name()));
         productTypeRepository.save(productType);
         return ProductTypeMapper.toDto(productType);
     }
@@ -41,6 +42,7 @@ public class ProductTypeService {
     /** Update product-type */
     @Transactional
     public ProductTypeDto updateProductType(ProductTypeUpdateRequest request){
+        System.out.println(String.format("Update product type , slug = %s , name = %s", request.slug(), request.name()));
         ProductType productType = findProductType(request.slug());
         productType.setName(request.name());
         productTypeRepository.save(productType);
@@ -54,5 +56,18 @@ public class ProductTypeService {
     /** Find product-type by slug, if not found throw error. */
     public ProductType findProductType(String slug){
         return productTypeRepository.findBySlug(slug).orElseThrow(() -> new ProductTypeNotFoundException("Product type with given slug not found"));
+    }
+
+    private String generateUniqueSlug(String name){
+        String baseSlug = name.trim().toLowerCase()
+                .replaceAll("[^a-z0-9\\s-]", "")
+                .replaceAll("\\s+", "-");
+        String slug = baseSlug;
+        int suffix = 1;
+
+        while(productTypeRepository.existsBySlug(slug)){
+            slug = baseSlug + "-" + (suffix++);
+        }
+        return slug;
     }
 }

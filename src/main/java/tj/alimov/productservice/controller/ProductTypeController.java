@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tj.alimov.productservice.dto.productType.ProductTypeCreationRequest;
 import tj.alimov.productservice.dto.productType.ProductTypeDto;
+import tj.alimov.productservice.dto.productType.ProductTypeUpdateRequest;
 import tj.alimov.productservice.service.product.ProductTypeService;
 
 @RestController
@@ -26,6 +27,11 @@ public class ProductTypeController {
         return ResponseEntity.ok(dto);
     }
 
+    @PutMapping("")
+    public ResponseEntity<ProductTypeDto> updateProductType(@RequestBody ProductTypeUpdateRequest request){
+        ProductTypeDto dto = productTypeService.updateProductType(request);
+        return ResponseEntity.ok(dto);
+    }
     @GetMapping("/all/{page}/{size}")
     public ResponseEntity<Page<ProductTypeDto>> getProductTypePage(@PathVariable("page") Integer page, @PathVariable("size") Integer size){
         Page<ProductTypeDto> pageList = productTypeService.getAll(PageRequest.of(page, size));
