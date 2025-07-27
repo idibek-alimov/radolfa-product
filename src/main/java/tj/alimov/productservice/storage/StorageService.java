@@ -16,7 +16,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class StorageService {
-    private final GoogleDriveService googleDriveService;
+//    private final GoogleDriveService googleDriveService;
     public String saveFile(MultipartFile file){
         String name = getName();
         return name;
@@ -25,13 +25,13 @@ public class StorageService {
     public BrandImage saveBrandImage(ImageCreationRequest request) {
         BrandImage brandImage = new BrandImage();
         String name = getName();
-        try {
-            googleDriveService.uploadImage(request.image(), name);
-        }catch (IOException e){
-            System.out.println("IOException " + e);
-        }catch (GeneralSecurityException e){
-            System.out.println("GeneralSecurityException " + e);
-        }
+//        try {
+//            googleDriveService.uploadImage(request.image(), name);
+//        }catch (IOException e){
+//            System.out.println("IOException " + e);
+//        }catch (GeneralSecurityException e){
+//            System.out.println("GeneralSecurityException " + e);
+//        }
 
         brandImage.setBaseUrl(name);
         brandImage.setThumbnailUrl(name + "thumbnail");
