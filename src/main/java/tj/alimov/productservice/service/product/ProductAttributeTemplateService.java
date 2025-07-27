@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 import tj.alimov.productservice.dto.product.response.ProductAttributeTemplateDto;
 import tj.alimov.productservice.dto.product.request.ProductAttributeTemplateRequest;
 import tj.alimov.productservice.exception.product.ProductAttributeTemplateException;
-import tj.alimov.productservice.exception.product.ProductTypeNotFoundException;
-import tj.alimov.productservice.mapper.ProductAttributeTemplateMapper;
-import tj.alimov.productservice.model.ProductAttributeTemplate;
-import tj.alimov.productservice.model.ProductType;
+import tj.alimov.productservice.exception.productType.ProductTypeNotFoundException;
+import tj.alimov.productservice.mapper.product.ProductAttributeTemplateMapper;
+import tj.alimov.productservice.model.product.ProductAttributeTemplate;
+import tj.alimov.productservice.model.product.ProductType;
 import tj.alimov.productservice.repository.product.ProductAttributeTemplateRepository;
 import tj.alimov.productservice.repository.product.ProductTypeRepository;
 

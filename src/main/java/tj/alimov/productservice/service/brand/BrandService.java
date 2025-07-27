@@ -42,8 +42,8 @@ public class BrandService {
     }
 
     /** Get Brand By slug */
-    public BrandDto getBrandBySlug(String slug){
-        Brand brand = findBrandBySlug(slug);
+    public BrandDto getBrand(String slug){
+        Brand brand = findBrand(slug);
         return BrandMapper.toBrandDto(brand);
     }
 
@@ -51,7 +51,7 @@ public class BrandService {
     @Transactional
     public BrandDto updateBrand(BrandUpdateRequest request){
         validateBrandUpdate(request);
-        Brand brand = findBrandBySlug(request.slug());
+        Brand brand = findBrand(request.slug());
         brand.setName(request.name());
         brand.setDescription(request.description());
         brand.setUrl(request.url());
@@ -67,7 +67,7 @@ public class BrandService {
     /** Add Image */
     @Transactional
     public BrandDto addImages(String slug, List<ImageCreationRequest> images){
-        Brand brand = findBrandBySlug(slug);
+        Brand brand = findBrand(slug);
         List<BrandImage> brandImages = new ArrayList<>();
         for(ImageCreationRequest item : images){
             BrandImage brandImage = storageService.saveBrandImage(item);
@@ -90,7 +90,7 @@ public class BrandService {
 
 
     /** Find brand by slug */
-    public Brand findBrandBySlug(String slug){
+    public Brand findBrand(String slug){
         return brandRepository.findBySlug(slug).orElseThrow(()-> new BrandNotFoundException("Brand with given slug does not exist", 404));
     }
 

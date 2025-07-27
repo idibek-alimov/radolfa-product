@@ -1,10 +1,11 @@
-package tj.alimov.productservice.model;
+package tj.alimov.productservice.model.product;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tj.alimov.productservice.model.AttributeDataType;
 
 @Entity
 @Data

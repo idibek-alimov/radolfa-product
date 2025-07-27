@@ -31,7 +31,7 @@ public class BrandController {
 
     @GetMapping("/public/{slug}")
     public ResponseEntity<BrandDto> getById(@PathVariable("slug") String slug){
-        BrandDto brandDto = brandService.getBrandBySlug(slug);
+        BrandDto brandDto = brandService.getBrand(slug);
         return ResponseEntity.ok(brandDto);
     }
 
