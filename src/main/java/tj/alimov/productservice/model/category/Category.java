@@ -27,6 +27,7 @@ public class Category extends Auditable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_generator")
     private Long id;
     private String name;
+    @Column(unique = true)
     private String slug;
 
     @ManyToOne(fetch = FetchType.LAZY)
