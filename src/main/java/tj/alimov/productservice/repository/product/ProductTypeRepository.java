@@ -19,4 +19,6 @@ public interface ProductTypeRepository extends JpaRepository<ProductType, Long> 
 
     @Query("SELECT CASE WHEN COUNT(pType) > 0 THEN true ELSE false END FROM ProductType pType WHERE pType.name = :name")
     boolean existsByName(String name);
+    @Query("SELECT CASE WHEN COUNT(pType) > 0 THEN true ELSE false END FROM ProductType pType WHERE pType.slug = :slug")
+    boolean existsBySlug(@Param("slug") String slug);
 }
