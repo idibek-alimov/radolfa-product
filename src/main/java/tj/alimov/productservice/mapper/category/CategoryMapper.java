@@ -20,7 +20,7 @@ public class CategoryMapper {
     }
 
     public static CategoryDto toCategoryDto(Category category){
-        return new CategoryDto(category.getName(),category.getSlug());
+        return new CategoryDto(category.getName(), category.getSlug());
     }
 
     public static Page<CategoryDto> toCategoryDtoPage(Page<Category> page){

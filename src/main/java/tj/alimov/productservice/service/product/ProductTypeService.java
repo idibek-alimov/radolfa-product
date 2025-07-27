@@ -15,7 +15,7 @@ import tj.alimov.productservice.exception.product.ProductTypeNotFoundException;
 import tj.alimov.productservice.model.ProductType;
 
 import tj.alimov.productservice.mapper.ProductTypeMapper;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.model.ProductType;
 
 import tj.alimov.productservice.repository.product.ProductTypeRepository;
 

@@ -32,6 +32,9 @@ public class SecurityConfig {
                         .requestMatchers("/category/**").permitAll()
                         .requestMatchers("/api/category/public/**", "/api/category/public").permitAll()
 
+                        // Brand
+                        .requestMatchers("/brand/**").permitAll()
+
                         .anyRequest().authenticated())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);

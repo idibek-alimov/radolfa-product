@@ -12,11 +12,11 @@ import tj.alimov.productservice.exception.brand.BrandNotFoundException;
 public class BrandExceptionAdvice {
     @ExceptionHandler({BrandNotFoundException.class})
     public ResponseEntity<ApiException> brandNotFoundExceptionHandler(BrandNotFoundException exception){
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiException(exception.getMessage(), 400));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiException(exception.getMessage(), exception.getCode()));
     }
 
     @ExceptionHandler({BrandExistsException.class})
     public ResponseEntity<ApiException> brandExistsException(BrandExistsException exception){
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiException(exception.getMessage(), 400));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiException(exception.getMessage(), exception.getCode()));
     }
 }

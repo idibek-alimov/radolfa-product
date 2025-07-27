@@ -9,6 +9,7 @@ import tj.alimov.productservice.model.BaseImage;
 import tj.alimov.productservice.model.brand.Brand;
 import tj.alimov.productservice.model.brand.BrandImage;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,9 +17,10 @@ public class BrandMapper {
 
     public static Brand toBrand(BrandCreationRequest request){
         return Brand.builder()
-                .name(request.getName())
-                .description(request.getDescription())
-                .url(request.getUrl())
+                .name(request.name())
+                .description(request.description())
+                .images(new ArrayList<>())
+                .url(request.url())
                 .build();
     }
 

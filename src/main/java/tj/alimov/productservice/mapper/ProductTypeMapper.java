@@ -3,7 +3,7 @@ package tj.alimov.productservice.mapper;
 import org.springframework.data.domain.Page;
 import tj.alimov.productservice.dto.product.request.ProductTypeRequest;
 import tj.alimov.productservice.dto.product.response.ProductTypeDto;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.model.ProductType;
 
 import java.util.List;
 

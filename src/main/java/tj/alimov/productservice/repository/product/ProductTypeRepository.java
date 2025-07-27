@@ -6,7 +6,7 @@ import tj.alimov.productservice.model.ProductType;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.model.ProductType;
 
 
 import java.util.Optional;

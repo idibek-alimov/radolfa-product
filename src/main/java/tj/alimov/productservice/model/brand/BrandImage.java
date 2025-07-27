@@ -26,6 +26,4 @@ public class BrandImage extends BaseImage{
     @ManyToOne
     private Brand brand;
 
-
-
 }
