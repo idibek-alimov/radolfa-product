@@ -37,6 +37,7 @@ public class BrandService {
         Brand brand = BrandMapper.toBrand(request);
         brand.setSlug(generateUniqueSlug(brand.getName()));
         brandRepository.save(brand);
+        System.out.println(String.format("brand.getImages() = %s", brand.getImages()));
         return BrandMapper.toBrandDto(brand);
     }
 
@@ -90,20 +91,20 @@ public class BrandService {
 
     /** Find brand by slug */
     public Brand findBrandBySlug(String slug){
-        return brandRepository.findBySlug(slug).orElseThrow(()-> new BrandNotFoundException("Brand with given slug does not exist"));
+        return brandRepository.findBySlug(slug).orElseThrow(()-> new BrandNotFoundException("Brand with given slug does not exist", 404));
     }
 
     /** Brand creation validation */
     private void validateBrandCreation(BrandCreationRequest request){
         if(brandRepository.existsByName(request.name())){
-            throw new BrandExistsException("Brand with given name already exists");
+            throw new BrandExistsException("Brand with given name already exists", 409);
         }
     }
 
     /** Brand update validation */
     private void validateBrandUpdate(BrandUpdateRequest request){
         if(brandRepository.existsByName(request.name())){
-            throw new BrandExistsException("Brand with given name already exists");
+            throw new BrandExistsException("Brand with given name already exists", 409);
         }
     }
 

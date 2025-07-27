@@ -28,10 +28,10 @@ public class CategoryService {
     @Transactional
     public CategoryDto createCategory(CategoryCreationRequest request){
         Category parentCategory = null;
-        if(request.getParentCategorySlug() != null){
-            parentCategory = findBySlug(request.getParentCategorySlug());
+        if(request.parentCategorySlug() != null){
+            parentCategory = findBySlug(request.parentCategorySlug());
         }
-        if(existByName(request.getName())){
+        if(existByName(request.name())){
             throw new CategoryExistsException("Category with the given name already exists");
         }
 
@@ -48,12 +48,12 @@ public class CategoryService {
     /** Update Category */
     @Transactional
     public CategoryDto updateCategory(CategoryUpdateRequest request){
-        Category category = findBySlug(request.getSlug());
+        Category category = findBySlug(request.slug());
         Category parentCategory = null;
-        if(request.getParentCategorySlug() != null){
-            parentCategory = findBySlug(request.getParentCategorySlug());
+        if(request.parentCategorySlug() != null){
+            parentCategory = findBySlug(request.parentCategorySlug());
         }
-        category.setName(request.getName());
+        category.setName(request.name());
         validateNoCircularDependency(category, parentCategory);
         category.setParentCategory(parentCategory);
         categoryRepository.save(category);

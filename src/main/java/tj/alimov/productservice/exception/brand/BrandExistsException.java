@@ -1,5 +1,8 @@
 package tj.alimov.productservice.exception.brand;
 
+import lombok.Data;
+
+@Data
 public class BrandExistsException extends RuntimeException{
     private String message;
     private Integer code;
@@ -9,6 +12,6 @@ public class BrandExistsException extends RuntimeException{
         this.code = code;
     }
     public BrandExistsException(String message){
-        this.message = message;
+        this(message, 400);
     }
 }

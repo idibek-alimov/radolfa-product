@@ -14,16 +14,13 @@ public class CategoryMapper {
     }
     public static Category toCategory(CategoryCreationRequest request, Category parentCategory){
         return Category.builder()
-                .name(request.getName())
+                .name(request.name())
                 .parentCategory(parentCategory)
                 .build();
     }
 
     public static CategoryDto toCategoryDto(Category category){
-        return CategoryDto.builder()
-                .name(category.getName())
-                .slug(category.getSlug())
-                .build();
+        return new CategoryDto(category.getName(), category.getSlug());
     }
 
     public static Page<CategoryDto> toCategoryDtoPage(Page<Category> page){

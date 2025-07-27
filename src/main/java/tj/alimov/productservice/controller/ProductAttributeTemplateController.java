@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tj.alimov.productservice.dto.product.request.ProductAttributeTemplateRequest;
 import tj.alimov.productservice.dto.product.response.ProductAttributeTemplateDto;
-import tj.alimov.productservice.module.ProductAttributeTemplate;
+import tj.alimov.productservice.model.ProductAttributeTemplate;
 import tj.alimov.productservice.service.product.ProductAttributeTemplateService;
 
 import java.util.List;
