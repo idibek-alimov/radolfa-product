@@ -29,7 +29,11 @@ public class SecurityConfig {
                         .requestMatchers("/v3/api-docs/**").permitAll()
                         .requestMatchers("/**").permitAll()
                         // Category
+                        .requestMatchers("/category/**").permitAll()
                         .requestMatchers("/api/category/public/**", "/api/category/public").permitAll()
+
+                        // Brand
+                        .requestMatchers("/brand/**").permitAll()
 
                         .anyRequest().authenticated())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

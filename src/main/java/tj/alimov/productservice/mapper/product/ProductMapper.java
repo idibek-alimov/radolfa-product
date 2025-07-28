@@ -4,10 +4,11 @@ package tj.alimov.productservice.mapper.product;
 import org.springframework.data.domain.Page;
 import tj.alimov.productservice.dto.product.request.ProductRequest;
 import tj.alimov.productservice.dto.product.response.ProductDto;
-import tj.alimov.productservice.module.Brand;
-import tj.alimov.productservice.module.Category;
-import tj.alimov.productservice.module.Product;
-import tj.alimov.productservice.module.ProductType;
+
+import tj.alimov.productservice.model.brand.Brand;
+import tj.alimov.productservice.model.category.Category;
+import tj.alimov.productservice.model.product.Product;
+import tj.alimov.productservice.model.product.ProductType;
 
 public class ProductMapper {
     public static Product toProduct(ProductRequest request, Long sellerId, ProductType productType, Category category, Brand brand){

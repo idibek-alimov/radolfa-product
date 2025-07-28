@@ -1,18 +1,19 @@
 package tj.alimov.productservice.mapper.product;
 
 import org.springframework.data.domain.Page;
-import tj.alimov.productservice.dto.product.request.ProductTypeRequest;
-import tj.alimov.productservice.dto.product.response.ProductTypeDto;
-import tj.alimov.productservice.module.ProductType;
+import tj.alimov.productservice.dto.productType.ProductTypeCreationRequest;
+import tj.alimov.productservice.dto.productType.ProductTypeDto;
+import tj.alimov.productservice.model.product.ProductType;
+
 
 public class ProductTypeMapper {
 
     public static ProductTypeDto toDto(ProductType productType){
-        return new ProductTypeDto(productType.getName());
+        return new ProductTypeDto(productType.getName(), productType.getSlug());
     }
 
-    public static ProductType toProductType(ProductTypeRequest request){
-        return new ProductType(request.getName());
+    public static ProductType toProductType(ProductTypeCreationRequest request){
+        return new ProductType(request.name());
     }
 
     public static Page<ProductTypeDto> toDtoPage(Page<ProductType> page){
