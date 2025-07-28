@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" version="28.0.7">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4093" dy="1957" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
+    <mxGraphModel dx="4312" dy="2116" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" background="light-dark(#FFFFFF,#0F0E0F)" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -162,7 +162,7 @@
         <mxCell id="CsUE58t2KNsDiMUx0Mvf-57" value="- id: Long" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;shadow=1;" parent="CsUE58t2KNsDiMUx0Mvf-56" vertex="1">
           <mxGeometry y="26" width="220" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="IbpW0PY4FkwVSWiJNxcG-12" value="- slug: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;shadow=1;" parent="CsUE58t2KNsDiMUx0Mvf-56" vertex="1">
+        <mxCell id="Vq7N3BT1uXLpS_XHq41v-0" value="- slug: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="CsUE58t2KNsDiMUx0Mvf-56">
           <mxGeometry y="52" width="220" height="26" as="geometry" />
         </mxCell>
         <mxCell id="CsUE58t2KNsDiMUx0Mvf-58" value="&lt;div&gt;- value: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;shadow=1;" parent="CsUE58t2KNsDiMUx0Mvf-56" vertex="1">
@@ -1978,22 +1978,22 @@
         <mxCell id="t9PTviuqwF8fJ2_iyHmG-4" value="BrandExistException" style="html=1;whiteSpace=wrap;" parent="t9PTviuqwF8fJ2_iyHmG-2" vertex="1">
           <mxGeometry x="10" y="100" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="hEJJ1V_aRCyV2PVF38uX-0" value="ProductType" style="swimlane;" vertex="1" parent="X-IRNNG0yeu0bM4sSkgh-1">
+        <mxCell id="hEJJ1V_aRCyV2PVF38uX-0" value="ProductType" style="swimlane;" parent="X-IRNNG0yeu0bM4sSkgh-1" vertex="1">
           <mxGeometry x="470" y="50" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="hEJJ1V_aRCyV2PVF38uX-1" value="ProductTypeNotFoundException" style="html=1;whiteSpace=wrap;" vertex="1" parent="hEJJ1V_aRCyV2PVF38uX-0">
+        <mxCell id="hEJJ1V_aRCyV2PVF38uX-1" value="ProductTypeNotFoundException" style="html=1;whiteSpace=wrap;" parent="hEJJ1V_aRCyV2PVF38uX-0" vertex="1">
           <mxGeometry x="10" y="35" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="hEJJ1V_aRCyV2PVF38uX-2" value="ProductTypeExistException" style="html=1;whiteSpace=wrap;" vertex="1" parent="hEJJ1V_aRCyV2PVF38uX-0">
+        <mxCell id="hEJJ1V_aRCyV2PVF38uX-2" value="ProductTypeExistException" style="html=1;whiteSpace=wrap;" parent="hEJJ1V_aRCyV2PVF38uX-0" vertex="1">
           <mxGeometry x="10" y="100" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="hEJJ1V_aRCyV2PVF38uX-3" value="ProductAttributeTemplate" style="swimlane;" vertex="1" parent="X-IRNNG0yeu0bM4sSkgh-1">
+        <mxCell id="hEJJ1V_aRCyV2PVF38uX-3" value="ProductAttributeTemplate" style="swimlane;" parent="X-IRNNG0yeu0bM4sSkgh-1" vertex="1">
           <mxGeometry x="690" y="50" width="300" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="hEJJ1V_aRCyV2PVF38uX-4" value="ProductAttributeTemplateNotFoundException" style="html=1;whiteSpace=wrap;" vertex="1" parent="hEJJ1V_aRCyV2PVF38uX-3">
+        <mxCell id="hEJJ1V_aRCyV2PVF38uX-4" value="ProductAttributeTemplateNotFoundException" style="html=1;whiteSpace=wrap;" parent="hEJJ1V_aRCyV2PVF38uX-3" vertex="1">
           <mxGeometry x="10" y="35" width="280" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="hEJJ1V_aRCyV2PVF38uX-5" value="ProductAttributeTemplateExistException" style="html=1;whiteSpace=wrap;" vertex="1" parent="hEJJ1V_aRCyV2PVF38uX-3">
+        <mxCell id="hEJJ1V_aRCyV2PVF38uX-5" value="ProductAttributeTemplateExistException" style="html=1;whiteSpace=wrap;" parent="hEJJ1V_aRCyV2PVF38uX-3" vertex="1">
           <mxGeometry x="10" y="100" width="280" height="50" as="geometry" />
         </mxCell>
       </root>
