@@ -8,7 +8,7 @@ import tj.alimov.productservice.dto.exception.ApiException;
 import tj.alimov.productservice.exception.productType.ProductTypeExistsException;
 import tj.alimov.productservice.exception.productType.ProductTypeNotFoundException;
 
-@ControllerAdvice
+@ControllerAdvice()
 public class ProductTypeExceptionAdvice {
 
     @ExceptionHandler(ProductTypeExistsException.class)
