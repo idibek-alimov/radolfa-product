@@ -1,10 +1,7 @@
 package tj.alimov.productservice.dto.category;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-@Data
-public class CategoryCreationRequest {
-    private String name;
-    private String slug;
-    private Long parentCategoryId;
-}
+
+public record CategoryCreationRequest(@NotBlank String name, String parentCategorySlug){}
