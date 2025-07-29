@@ -6,8 +6,6 @@ import org.springframework.data.domain.Page;
 import tj.alimov.productservice.dto.productAttributeTemplate.ProductAttributeTemplateCreationRequest;
 import tj.alimov.productservice.dto.productAttributeTemplate.ProductAttributeTemplateDto;
 import tj.alimov.productservice.model.AttributeDataType;
-import tj.alimov.productservice.model.product.ProductAttributeTemplate;
-import tj.alimov.productservice.model.product.ProductType;
 
 
 import java.util.List;
