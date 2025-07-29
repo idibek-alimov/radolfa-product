@@ -11,8 +11,6 @@ import tj.alimov.productservice.mapper.product.ProductMapper;
 
 
 import tj.alimov.productservice.model.product.Product;
-
-import tj.alimov.productservice.model.product.ProductType;
 import tj.alimov.productservice.repository.product.ProductRepository;
 import tj.alimov.productservice.service.JwtService;
 import tj.alimov.productservice.service.brand.BrandService;
@@ -24,11 +22,7 @@ import tj.alimov.productservice.service.user.UserService;
 public class ProductService {
     private final ProductRepository productRepository;
 //    private final UserServiceClient userServiceClient;
-    private final UserService userService;
-    private final CategoryService categoryService;
-    private final BrandService brandService;
-    private final ProductTypeService productTypeService;
-    private final JwtService jwtService;
+
 //    @Transactional
 //    public void createProduct(ProductRequest request, Long sellerId){
 //        userService.validateUser(sellerId);
@@ -71,7 +65,7 @@ public class ProductService {
 //    }
 
     public Product findProduct(String slug){
-        return null; // TO DO
+        return productRepository.findBySlug(slug).orElseThrow(() -> new ProductNotFoundException("Product with given slug not found"));
     }
 
 }

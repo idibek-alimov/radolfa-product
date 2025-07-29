@@ -1,3 +1,4 @@
+
 package tj.alimov.productservice.model.category;
 
 import jakarta.persistence.*;
