@@ -5,13 +5,13 @@ import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import tj.alimov.productservice.mapper.product.ProductAttributeTemplateMapper;
+
 import tj.alimov.productservice.dto.productAttributeTemplate.ProductAttributeTemplateCreationRequest;
 import tj.alimov.productservice.dto.productAttributeTemplate.ProductAttributeTemplateDto;
 import tj.alimov.productservice.dto.productAttributeTemplate.ProductAttributeTemplateUpdateRequest;
 import tj.alimov.productservice.exception.productAttributeTemplate.ProductAttributeTemplateExistException;
 import tj.alimov.productservice.exception.productAttributeTemplate.ProductAttributeTemplateNotFoundException;
-import tj.alimov.productservice.exception.productType.ProductTypeNotFoundException;
-import tj.alimov.productservice.mapper.product.ProductAttributeTemplateMapper;
 import tj.alimov.productservice.model.AttributeDataType;
 import tj.alimov.productservice.model.product.ProductAttributeTemplate;
 import tj.alimov.productservice.model.product.ProductType;

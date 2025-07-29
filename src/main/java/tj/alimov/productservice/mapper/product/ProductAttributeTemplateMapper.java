@@ -1,5 +1,7 @@
 package tj.alimov.productservice.mapper.product;
 
+
+
 import org.springframework.data.domain.Page;
 import tj.alimov.productservice.dto.productAttributeTemplate.ProductAttributeTemplateCreationRequest;
 import tj.alimov.productservice.dto.productAttributeTemplate.ProductAttributeTemplateDto;
@@ -7,10 +9,12 @@ import tj.alimov.productservice.model.AttributeDataType;
 import tj.alimov.productservice.model.product.ProductAttributeTemplate;
 import tj.alimov.productservice.model.product.ProductType;
 
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductAttributeTemplateMapper {
+
     public static ProductAttributeTemplate toProductAttributeTemplate(ProductAttributeTemplateCreationRequest request, ProductType productType){
         return ProductAttributeTemplate.builder()
                 .name(request.name())
@@ -31,5 +35,4 @@ public class ProductAttributeTemplateMapper {
     public static Page<ProductAttributeTemplateDto> toDtoPage(Page<ProductAttributeTemplate> page){
         return page.map(ProductAttributeTemplateMapper::toDto);
     }
-
 }

@@ -5,6 +5,7 @@ import tj.alimov.productservice.dto.productType.ProductTypeCreationRequest;
 import tj.alimov.productservice.dto.productType.ProductTypeDto;
 import tj.alimov.productservice.model.product.ProductType;
 
+
 public class ProductTypeMapper {
 
     public static ProductTypeDto toDto(ProductType productType){

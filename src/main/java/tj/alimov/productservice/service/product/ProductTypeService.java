@@ -6,6 +6,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+
+import tj.alimov.productservice.mapper.product.ProductTypeMapper;
+import tj.alimov.productservice.repository.product.ProductTypeRepository;
+
 import tj.alimov.productservice.dto.productType.ProductTypeCreationRequest;
 import tj.alimov.productservice.dto.productType.ProductTypeDto;
 import tj.alimov.productservice.dto.productType.ProductTypeUpdateRequest;
@@ -14,9 +18,6 @@ import tj.alimov.productservice.exception.productType.ProductTypeNotFoundExcepti
 
 import tj.alimov.productservice.model.product.ProductType;
 
-import tj.alimov.productservice.mapper.product.ProductTypeMapper;
-
-import tj.alimov.productservice.repository.product.ProductTypeRepository;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +25,7 @@ public class ProductTypeService {
     private final ProductTypeRepository productTypeRepository;
 
     /** Get create product-type */
+
     @Transactional
     public ProductTypeDto createProductType(ProductTypeCreationRequest request){
         if(productTypeRepository.existsByName(request.name())){
