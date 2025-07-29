@@ -24,6 +24,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_generator")
     private Long id;
 
+    @Column(nullable = false)
+    private String slug;
     @ManyToOne
     private Category category;
 
