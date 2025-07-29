@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BrandMapper {
-
+    //
     public static Brand toBrand(BrandCreationRequest request){
         return Brand.builder()
                 .name(request.name())
