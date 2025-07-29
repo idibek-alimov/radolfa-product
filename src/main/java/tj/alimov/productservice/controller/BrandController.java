@@ -42,13 +42,13 @@ public class BrandController {
     }
 
     @GetMapping("/all/{page}/{size}")
-    public ResponseEntity<Page<BrandDto>> getAll(@PathVariable("{page}") Integer page, @PathVariable("{size}") Integer size){
+    public ResponseEntity<Page<BrandDto>> getAll(@PathVariable("page") Integer page, @PathVariable("size") Integer size){
         Page<BrandDto> pageList = brandService.getAll(PageRequest.of(page, size));
         return ResponseEntity.ok(pageList);
     }
 
     @PostMapping(value = "/images/{slug}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<BrandDto> addImages(@PathVariable("slug") String slug, @RequestPart MultipartFile[] images, Integer[] positions){
+    public ResponseEntity<BrandDto> addImages(@PathVariable("slug") String slug, @RequestPart("images") MultipartFile[] images, @RequestPart("positions") Integer[] positions){
         List<ImageCreationRequest> list = new ArrayList<>();
         for(int i = 0; i < images.length; i++){
             list.add(new ImageCreationRequest(images[i], positions[i]));
