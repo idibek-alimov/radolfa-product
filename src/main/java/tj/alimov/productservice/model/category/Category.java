@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:src/main/java/tj/alimov/productservice/model/Category.java
-package tj.alimov.productservice.model;
-========
+
 package tj.alimov.productservice.model.category;
->>>>>>>> master:src/main/java/tj/alimov/productservice/model/category/Category.java
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

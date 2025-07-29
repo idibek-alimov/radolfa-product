@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:src/main/java/tj/alimov/productservice/model/ProductImage.java
-package tj.alimov.productservice.model;
-========
+
 package tj.alimov.productservice.model.product;
->>>>>>>> master:src/main/java/tj/alimov/productservice/model/product/ProductImage.java
 
 import jakarta.persistence.*;
 import lombok.Data;
