@@ -3,7 +3,7 @@ package tj.alimov.productservice.model.product;
 import jakarta.persistence.*;
 import lombok.Data;
 import tj.alimov.productservice.model.ColorOption;
-import tj.alimov.productservice.model.SizeOption;
+import tj.alimov.productservice.model.size.SizeOption;
 
 import java.math.BigDecimal;
 
