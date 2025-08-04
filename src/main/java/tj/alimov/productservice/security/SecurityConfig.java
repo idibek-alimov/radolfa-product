@@ -35,6 +35,9 @@ public class SecurityConfig {
                         // Brand
                         .requestMatchers("/brand/**").permitAll()
 
+                        // Size
+                        .requestMatchers("/size/**").permitAll()
+
                         .anyRequest().authenticated())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
