@@ -1,71 +1,101 @@
 package tj.alimov.productservice.service.product;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import tj.alimov.productservice.dto.product.ProductCreationRequest;
+import tj.alimov.productservice.dto.product.ProductDto;
+import tj.alimov.productservice.dto.product.ProductUpdateRequest;
+import tj.alimov.productservice.exception.product.ProductIllegalAccessException;
 import tj.alimov.productservice.exception.product.ProductNotFoundException;
-import tj.alimov.productservice.exception.product.ProductUpdateException;
+
+
+import tj.alimov.productservice.feign.UserServiceClient;
 import tj.alimov.productservice.mapper.product.ProductMapper;
-
-
+import tj.alimov.productservice.model.brand.Brand;
+import tj.alimov.productservice.model.category.Category;
 import tj.alimov.productservice.model.product.Product;
+import tj.alimov.productservice.model.product.ProductType;
 import tj.alimov.productservice.repository.product.ProductRepository;
-import tj.alimov.productservice.service.JwtService;
 import tj.alimov.productservice.service.brand.BrandService;
 import tj.alimov.productservice.service.category.CategoryService;
-import tj.alimov.productservice.service.user.UserService;
 
 @Service
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
-//    private final UserServiceClient userServiceClient;
+    private final CategoryService categoryService;
+    private final BrandService brandService;
+    private final ProductTypeService productTypeService;
 
-//    @Transactional
-//    public void createProduct(ProductRequest request, Long sellerId){
-//        userService.validateUser(sellerId);
-////        Brand brand = brandService.getBrand(request.getBrandId());
-////        Category category = categoryService.getCategory(request.getCategoryId());
-////        ProductType productType = productTypeService.getProductType(request.getProductTypeId());
-//
-////        Product product = ProductMapper.toProduct(request, sellerId, productType, category, brand);
-////        productRepository.save(product);
-//    }
-//
-//    public ProductDto getProductDto(Long id){
-//        Product product = getProduct(id);
-//        return ProductMapper.toProductDto(product);
-//    }
-//    public Product getProduct(Long id){
-//        return productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with given id not found"));
-//    }
-//    public void updateProduct(ProductUpdateRequest request, Long sellerId){
-//        userService.validateUser(sellerId);
-//        Product product = getProduct(request.getId());
-//        if(sellerId != product.getSellerId()){
-//            throw new ProductUpdateException("Product does not belong to you. Only seller can update the products");
-//        }
-////        Brand brand = brandService.getBrand(request.getBrandId());
-////        Category category = categoryService.getCategory(request.getCategoryId());
-////        ProductType productType = productTypeService.getProductType(request.getProductTypeId());
-//
-////        product.setProductType(productType);
-////        product.setBrand(brand);
-////        product.setCategory(category);
-//        product.setName(request.getName());
-//        product.setDescription(request.getDescription());
-//        productRepository.save(product);
-//    }
-//
-//    public Page<ProductDto> getProducts(Pageable pageable){
-//        Page<Product> products = productRepository.findAll(pageable);
-//        return ProductMapper.toProductDtoList(products);
-//    }
+    private final UserServiceClient userServiceClient;
+
+    @Transactional
+    public ProductDto createProduct(ProductCreationRequest request, Long sellerId){
+        validateProductCreation(sellerId);
+        Brand brand = brandService.findBrand(request.brandSlug());
+        Category category = categoryService.findCategory(request.categorySlug());
+        ProductType productType = productTypeService.findProductType(request.productTypeSlug());
+
+        Product product = ProductMapper.toProduct(request, sellerId, productType, category, brand);
+        product.setSlug(generateUniqueSlug(request.name()));
+        product.setSellerId(sellerId);
+        productRepository.save(product);
+        return ProductMapper.toDto(product);
+    }
+
+    public ProductDto getProduct(String slug){
+        return productRepository.getProductDto(slug).orElseThrow(() -> new ProductNotFoundException("Product with given slug not found"));
+    }
+    @Transactional
+    public ProductDto updateProduct(ProductUpdateRequest request, Long sellerId){
+        Product product = findProduct(request.slug());
+        Brand brand = brandService.findBrand(request.brandSlug());
+        Category category = categoryService.findCategory(request.categorySlug());
+        ProductType productType = productTypeService.findProductType(request.productTypeSlug());
+        validateProductUpdate(product, sellerId);
+
+        product.setBrand(brand);
+        product.setCategory(category);
+        product.setProductType(productType);
+        product.setName(request.name());
+        product.setDescription(request.description());
+        productRepository.save(product);
+        return ProductMapper.toDto(product);
+    }
+
+    public Page<ProductDto> getAll(Pageable pageable){
+        return productRepository.getAll(pageable);
+    }
+
 
     public Product findProduct(String slug){
         return productRepository.findBySlug(slug).orElseThrow(() -> new ProductNotFoundException("Product with given slug not found"));
+    }
+    private void validateProductCreation(Long sellerId){
+        if(!userServiceClient.existsUserById(sellerId)){
+            throw new ProductIllegalAccessException("User with given id does not exist");
+        }
+    }
+
+    private void validateProductUpdate(Product product, Long sellerId){
+        if(!product.getSellerId().equals(sellerId)){
+            throw new ProductIllegalAccessException("Provided user is not Seller. Only seller can update the product");
+        }
+    }
+    private String generateUniqueSlug(String name){
+        String baseSlug = name.trim().toLowerCase()
+                .replaceAll("[^a-z0-9\\s-]", "")
+                .replaceAll("\\s+", "-");
+        String slug = baseSlug;
+        int suffix = 1;
+
+        while(productRepository.existsBySlug(slug)){
+            slug = baseSlug + "-" + (suffix++);
+        }
+        return slug;
     }
 
 }

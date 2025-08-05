@@ -29,7 +29,7 @@ public class CategoryService {
     public CategoryDto createCategory(CategoryCreationRequest request){
         Category parentCategory = null;
         if(request.parentCategorySlug() != null){
-            parentCategory = findBySlug(request.parentCategorySlug());
+            parentCategory = findCategory(request.parentCategorySlug());
         }
         if(existByName(request.name())){
             throw new CategoryExistsException("Category with the given name already exists");
@@ -42,16 +42,16 @@ public class CategoryService {
     }
     /** Get Category by slug */
     public CategoryDto getBySlug(String slug){
-        Category category = findBySlug(slug);
+        Category category = findCategory(slug);
         return CategoryMapper.toCategoryDto(category);
     }
     /** Update Category */
     @Transactional
     public CategoryDto updateCategory(CategoryUpdateRequest request){
-        Category category = findBySlug(request.slug());
+        Category category = findCategory(request.slug());
         Category parentCategory = null;
         if(request.parentCategorySlug() != null){
-            parentCategory = findBySlug(request.parentCategorySlug());
+            parentCategory = findCategory(request.parentCategorySlug());
         }
         category.setName(request.name());
         validateNoCircularDependency(category, parentCategory);
@@ -63,7 +63,7 @@ public class CategoryService {
 //    /** Delete by slug */
 //    public void deleteCategory(String slug){
 //        /** Just to check if category exists*/
-//        findBySlug(slug);
+//        findCategory(slug);
 //        categoryRepository.deleteBySlug(slug);
 //    }
     /** Get all categories */
@@ -74,14 +74,14 @@ public class CategoryService {
     /** Get All child categories of given category*/
     @Transactional(readOnly = true)
     public List<CategoryDto> getSubcategories(String slug){
-        Category category = findBySlug(slug);
+        Category category = findCategory(slug);
         List<Category> subcategories = category.getChildCategories();
         return CategoryMapper.toCategoryDtoList(subcategories);
     }
     /** Get full path(up to top ancestor) of the given category */
     @Transactional(readOnly = true)
     public List<CategoryDto> getFullPath(String slug){
-        Category category = findBySlug(slug);
+        Category category = findCategory(slug);
         category = category.getParentCategory();
         List<Category> categories = new ArrayList<>();
         while(category != null){
@@ -93,7 +93,7 @@ public class CategoryService {
     }
 
     /** Helper Functions */
-    private Category findBySlug(String slug){
+    public Category findCategory(String slug){
         return categoryRepository.findBySlug(slug).orElseThrow(() -> new CategoryNotFoundException("Category with given slug not found"));
     }
 
