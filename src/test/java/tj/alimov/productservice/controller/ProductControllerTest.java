@@ -15,32 +15,3 @@ import tj.alimov.productservice.service.product.ProductService;
 import static org.mockito.Mockito.*;
 import static org.mockito.ArgumentMatchers.anyLong;
 
-public class ProductControllerTest {
-    private MockMvc mockMvc;
-
-    @Mock
-    private ProductService productService;
-
-    @Mock
-    private JwtService jwtService;
-
-    @InjectMocks
-    private ProductController productController;
-
-
-    @BeforeEach
-    void setUp(){
-        MockitoAnnotations.openMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
-    }
-
-//    @Test
-//    void getProduct_ShouldReturnProduct() throws Exception{
-//        ProductDto mockProduct = new ProductDto("TestProduct", "Description");
-//
-//        when(productService.getProductDto(anyLong())).thenReturn(mockProduct);
-//
-////        mockMvc.perform(get("/products/1")).andExpect(status.ok)
-//    }
-
-}
