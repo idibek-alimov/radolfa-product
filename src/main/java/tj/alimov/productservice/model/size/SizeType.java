@@ -1,6 +1,32 @@
-package tj.alimov.productservice.model;
+package tj.alimov.productservice.model.size;
 
-public class AdvancedSize {
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import tj.alimov.productservice.model.Auditable;
+
+@Entity
+@Table(indexes = {@Index(name = "idx_size_type_slug", columnList = "slug")})
+@SequenceGenerator(name = "size_type_generator", sequenceName = "seq_size_type_generator")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class SizeType extends Auditable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "size_type_generator")
+    private Long id;
+
+    @Column(nullable = false)
+    private String slug;
+    @Column(nullable = false, unique = true)
+    private String name;
+    @Column(nullable = false)
+    private String description;
+
+
 //    // ========== SIZE SYSTEM ENTITY ==========
 //    @Entity
 //    public class SizeSystem {

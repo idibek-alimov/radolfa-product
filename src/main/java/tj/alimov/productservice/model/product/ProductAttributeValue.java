@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tj.alimov.productservice.model.Auditable;
 
 @Entity
 @Table(indexes = {@Index(name = "idx_product_attribute_value_slug", columnList = "slug")},
@@ -22,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductAttributeValue {
+public class ProductAttributeValue extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_attribute_value")
     private Long id;
