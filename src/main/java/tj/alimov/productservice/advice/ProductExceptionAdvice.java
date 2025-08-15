@@ -4,12 +4,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tj.alimov.productservice.dto.exception.ApiException;
 import tj.alimov.productservice.exception.product.ProductConflictException;
 import tj.alimov.productservice.exception.product.ProductIllegalAccessException;
 import tj.alimov.productservice.exception.product.ProductNotFoundException;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class ProductExceptionAdvice {
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<ApiException> productNotFoundExceptionHandle(ProductNotFoundException exception){

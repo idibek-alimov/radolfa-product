@@ -4,10 +4,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tj.alimov.productservice.dto.exception.ApiException;
 import tj.alimov.productservice.exception.size.*;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class SizeExceptionAdvice {
 
     // FitType

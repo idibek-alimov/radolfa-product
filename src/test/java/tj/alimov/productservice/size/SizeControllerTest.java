@@ -82,5 +82,4 @@ public class SizeControllerTest {
                 .andExpect(jsonPath("$.slug").value("baby-fit"))
                 .andExpect(jsonPath("$.name").value("baby-fit-updated"));
     }
-
 }

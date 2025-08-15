@@ -12,7 +12,8 @@ import tj.alimov.productservice.model.category.Category;
 import java.util.List;
 
 @Entity
-@Table(indexes = @Index(name = "idx_product_category_id", columnList = "category"))
+@Table(indexes = @Index(name = "idx_product_category_id", columnList = "category_id"))
+
 @Data
 @SequenceGenerator(
         name = "product_generator",
