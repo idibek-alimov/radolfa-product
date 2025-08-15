@@ -21,7 +21,6 @@ import tj.alimov.productservice.model.product.ProductType;
 import tj.alimov.productservice.repository.product.ProductRepository;
 import tj.alimov.productservice.service.brand.BrandService;
 import tj.alimov.productservice.service.category.CategoryService;
-import tj.alimov.productservice.service.user.UserService;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +31,7 @@ public class ProductService {
     private final ProductTypeService productTypeService;
 
     private final UserService userService;
+
 
     @Transactional
     public ProductDto createProduct(ProductCreationRequest request, Long sellerId){
