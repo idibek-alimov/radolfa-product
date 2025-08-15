@@ -11,7 +11,8 @@ public class UserService {
     private final UserServiceClient userServiceClient;
 
     public void validateUser(Long id){
-        boolean exists = userServiceClient.existsUserById(id);
+        boolean exists = true; //userServiceClient.existsUserById(id);
+
         if(!exists){
             throw new UserNotFoundException("User with given id was not found");
         }

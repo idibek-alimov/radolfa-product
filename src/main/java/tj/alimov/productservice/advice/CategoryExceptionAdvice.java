@@ -8,11 +8,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tj.alimov.productservice.dto.exception.ApiException;
 import tj.alimov.productservice.exception.category.CategoryExistsException;
 import tj.alimov.productservice.exception.category.CategoryNotFoundException;
 
-@ControllerAdvice
+@RestControllerAdvice
 @ResponseBody
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class CategoryExceptionAdvice {

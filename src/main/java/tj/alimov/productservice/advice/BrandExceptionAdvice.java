@@ -4,11 +4,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tj.alimov.productservice.dto.exception.ApiException;
 import tj.alimov.productservice.exception.brand.BrandExistsException;
 import tj.alimov.productservice.exception.brand.BrandNotFoundException;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class BrandExceptionAdvice {
     @ExceptionHandler({BrandNotFoundException.class})
     public ResponseEntity<ApiException> brandNotFoundExceptionHandler(BrandNotFoundException exception){

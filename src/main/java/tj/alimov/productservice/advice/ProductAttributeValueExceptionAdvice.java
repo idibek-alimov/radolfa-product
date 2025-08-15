@@ -4,11 +4,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tj.alimov.productservice.dto.exception.ApiException;
 import tj.alimov.productservice.exception.productAttributeValue.ProductAttributeValueConflictException;
 import tj.alimov.productservice.exception.productAttributeValue.ProductAttributeValueNotFoundException;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class ProductAttributeValueExceptionAdvice {
 
     @ExceptionHandler(ProductAttributeValueNotFoundException.class)

@@ -21,6 +21,7 @@ import tj.alimov.productservice.model.product.ProductType;
 import tj.alimov.productservice.repository.product.ProductRepository;
 import tj.alimov.productservice.service.brand.BrandService;
 import tj.alimov.productservice.service.category.CategoryService;
+import tj.alimov.productservice.service.user.UserService;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +31,7 @@ public class ProductService {
     private final BrandService brandService;
     private final ProductTypeService productTypeService;
 
-    private final UserServiceClient userServiceClient;
+    private final UserService userService;
 
     @Transactional
     public ProductDto createProduct(ProductCreationRequest request, Long sellerId){
@@ -40,7 +41,7 @@ public class ProductService {
         ProductType productType = productTypeService.findProductType(request.productTypeSlug());
 
         Product product = ProductMapper.toProduct(request, sellerId, productType, category, brand);
-        product.setSlug(generateUniqueSlug(request.name()));
+        product.setSlug(generateUniqueSlug(category.getSlug() + "-" + brand.getSlug() + "-" + request.name()));
         product.setSellerId(sellerId);
         productRepository.save(product);
         return ProductMapper.toDto(product);
@@ -75,9 +76,7 @@ public class ProductService {
         return productRepository.findBySlug(slug).orElseThrow(() -> new ProductNotFoundException("Product with given slug not found"));
     }
     private void validateProductCreation(Long sellerId){
-        if(!userServiceClient.existsUserById(sellerId)){
-            throw new ProductIllegalAccessException("User with given id does not exist");
-        }
+        userService.validateUser(sellerId);
     }
 
     private void validateProductUpdate(Product product, Long sellerId){
